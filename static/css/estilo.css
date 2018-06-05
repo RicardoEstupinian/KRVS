@@ -1,0 +1,84 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+	margin:0;
+	padding:0;
+}
+header{
+	width: 100%;
+}
+
+nav{
+	width: 100%;
+	max-width: 4000px auto;
+	height: 60px;
+}
+
+nav ul{
+	list-style:none;
+}
+
+nav > ul {
+	display:table;
+	width:100%;
+	overflow: hidden;
+	background:#000;
+	position: relative;
+}
+
+nav > ul li{
+	display: table-cell;
+}
+
+nav > ul li a{
+	color: #FFF;
+	display: block;
+	line-height: 20px;
+	padding: 20px;
+	position: relative;
+	text-align: center;
+	text-decoration: none;
+	
+}
+
+nav > ul > li a span{
+	background: #174459;
+	display: block;
+	height: 100%;
+	width: 100%;
+	left: 0;
+	position: absolute;
+	top:-55px;
+	
+}
+nav > ul > li a span .icon{
+	display: block;
+	line-height: 60px;
+	
+}
+
+nav > ul> li a:hover > span{
+	top:0;
+	-moz-transition: all .3s ease;
+	transition: all .3s ease;
+}
+
+/*Colores para el menu*/
+.dos {
+	background:#E30D0D;
+}
+
+.tres {
+	background:#16981C;
+}
+.cuatro{
+	background: #0CADCA;
+}
+nav ul li a  i{
+	color: aliceblue;
+}
+
+nav > ul> li a:hover{
+	text-decoration: none;
+	color:#FFF;
+}
