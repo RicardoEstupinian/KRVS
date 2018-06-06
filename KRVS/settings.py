@@ -80,9 +80,9 @@ WSGI_APPLICATION = 'KRVS.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'KRVS',
-        'USER': 'postgres',
-        'PASSWORD' : 'ues',
+        'NAME': 'kvrs',
+        'USER': 'ml16006',
+        'PASSWORD' : 'dna',
         'HOST' : 'localhost',
         'PORT': 5432,
 
