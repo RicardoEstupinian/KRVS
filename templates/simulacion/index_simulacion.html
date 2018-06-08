@@ -1,1 +1,90 @@
 {% extends 'base/base.html' %}
+{% block body %}
+<form method="post">
+	{% csrf_token %}
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<div class="container">
+       <table class="table table-striped">
+          <tbody>
+             <tr>
+                <td colspan="1">
+                   <form class="well form-horizontal">
+                      <fieldset>
+                         <div class="form-group">
+                            <label class="col-md-4 control-label" for="{{form.numero_Cables.name}}">{{form.numero_Cables.label}}</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               {{form.numero_Cables}}
+                            </div>
+                         </div>
+                         
+                         <div class="form-group">
+                            <label class="col-md-4 control-label" for="{{form.carga_Nominal.name}}">{{form.carga_Nominal.label}}</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               {{form.carga_Nominal}}
+                            </div>
+                         </div>
+
+                         <div class="form-group">
+                            <label class="col-md-4 control-label" for="{{form.recorrido_Cabina.name}}">{{form.recorrido_Cabina.label}}</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               {{form.recorrido_Cabina}}
+                            </div>
+                         </div>
+                         <div class="form-group">
+                            <label class="col-md-4 control-label" for="{{form.recorido_Superior_Piston.name}}">{{form.recorido_Superior_Piston.label}}</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               {{form.recorido_Superior_Piston}}
+                            </div>
+                         </div>
+                         <div class="form-group">
+                            <label class="col-md-4 control-label" for="{{form.cantidad_Pistones.name}}">{{form.cantidad_Pistones.label}}</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               {{form.cantidad_Pistones}}
+                            </div>
+                         </div>
+                         <div class="form-group">
+                            <label class="col-md-4 control-label" for="{{form.cantidad_Cilindros.name}}">{{form.cantidad_Cilindros.label}}</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               {{form.cantidad_Cilindros}}
+                            </div>
+                         </div>
+                         <div class="form-group">
+                            <label class="col-md-4 control-label" for="{{form.numero_Expanciones.name}}">{{form.numero_Expanciones.label}}</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               {{form.numero_Expanciones}}
+                            </div>
+                         </div>
+                         <div class="form-group">
+                            <label class="col-md-4 control-label" for="{{form.velocidad_Cabina.name}}">{{form.velocidad_Cabina.label}}</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               {{form.velocidad_Cabina}}
+                            </div>
+                         </div>                         
+
+                        <div class="clearfix"></div>
+					    <button type="submit" class="btn btn-info btn-lg btn-responsive" id="simular"> <span class="glyphicon glyphicon"></span> Simular</button>
+
+                      </fieldset>
+                   </form>
+                </td>
+                <td colspan="1">
+                   <form class="well form-horizontal">
+                      <fieldset>
+                         
+                      </fieldset>
+                   </form>
+                </td>
+             </tr>
+          </tbody>
+       </table>
+    </div>
+	
+</form>
+
+{% endblock %}
+
+
+
