@@ -1,12 +1,18 @@
 {% extends 'base/base.html' %}
-{% block body %}
+
+{% block content %}
+  <div class= "row">
+    <div class= "col-md-8 col-sm-12">
+
+        {% block main-content %}
 <form method="post">
-	{% csrf_token %}
+  {% csrf_token %}
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 <div class="container">
+
        <table class="table table-striped">
           <tbody>
              <tr>
@@ -63,28 +69,87 @@
                                {{form.velocidad_Cabina}}
                             </div>
                          </div>                         
-
+                        
                         <div class="clearfix"></div>
-					    <button type="submit" class="btn btn-info btn-lg btn-responsive" id="simular"> <span class="glyphicon glyphicon"></span> Simular</button>
+                        <button type="submit" class="btn btn-info btn-lg btn-responsive" id="simular"> <span class="glyphicon glyphicon"></span> Simular</button>
 
                       </fieldset>
                    </form>
                 </td>
-                <td colspan="1">
-                   <form class="well form-horizontal">
-                      <fieldset>
-                         
-                      </fieldset>
-                   </form>
-                </td>
+                
              </tr>
           </tbody>
        </table>
     </div>
-	
+  
 </form>
+
+
+
 
 {% endblock %}
 
+{% block sidebar %}
 
+        <div class="container">
+          <table class="table table-striped">
+            <tbody>
+               <tr>
+                  <td colspan="1">
+                     <form class="well form-horizontal">
+                        <fieldset>
+                         <table class="table">
+                          <thead class="thead-dark">
+                            <tr>
+                              <th scope="col"># </th>
+                              <th scope="col">Coefciente de seguridad</th>
+                              <th scope="col">Presion estatica del piston</th>
+                              <th scope="col">Masa del vastago</th>
+                              <th scope="col">Presion minima bomba</th>
+                              <th scope="col">Recorrida del piston</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th scope="row">1</th>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <th scope="row">2</th>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <th scope="row">3</th>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <div class= "row">
+                        <div class= "col-md-8 col-sm-12">
+                          <div class="clearfix"></div>
+                          <button type="submit" class="btn btn-info btn-lg btn-responsive" id="simular"> <span class="glyphicon glyphicon"></span> Guardar</button>
 
+                      </form>
+                </td>
+                
+             </tr>
+          </tbody>
+       </table>
+
+          </div>
+            
+
+{% endblock %}
+{% endblock %}

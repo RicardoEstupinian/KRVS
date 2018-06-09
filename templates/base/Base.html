@@ -69,7 +69,11 @@
                 </ul>
             </nav>
         </header>
-        {% block body%}
+        {% block content %}
+        {% block main-content %}
+        {% endblock %}
+        {% block sidebar %}
+        {% endblock %}
         {% endblock %}
         <!--Script necesario para bootstrap-->
         <script src="{% static 'js/bootstrap.min.js' %}" type="text/javascript">
