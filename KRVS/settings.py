@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'apps.log',
     'apps.simulacion',
     'apps.solicitud',
+    'apps.inicio',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -80,7 +81,7 @@ WSGI_APPLICATION = 'KRVS.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'kvrs',
+        'NAME': 'KRVS',
         'USER': 'ml16006',
         'PASSWORD' : 'dna',
         'HOST' : 'localhost',

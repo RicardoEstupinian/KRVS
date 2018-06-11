@@ -18,7 +18,7 @@
             </meta>
         </meta>
     </head>
-    <body class="bg-dark">
+    <body class="bg-light">
         <header>
             <nav>
                 <ul>
@@ -69,12 +69,18 @@
                 </ul>
             </nav>
         </header>
+        {% block body%}
         {% block content %}
         {% block main-content %}
         {% endblock %}
         {% block sidebar %}
         {% endblock %}
         {% endblock %}
+        {% endblock %}
+
+        
+
+
         <!--Script necesario para bootstrap-->
         <script src="{% static 'js/bootstrap.min.js' %}" type="text/javascript">
         </script>

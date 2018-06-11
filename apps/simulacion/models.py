@@ -5,7 +5,7 @@ from apps.log.models import Usuario
 
 # Create your models here.
 class Simulador(models.Model):
-	numero_Cables = models.IntegerField(null=True)
+	numero_Cables = models.FloatField(null=True)
 	carga_Nominal = models.FloatField(null=True)
 	recorrido_Cabina =  models.FloatField(null=True)
 	recorido_Superior_Piston  = models.FloatField(null=True)
@@ -13,6 +13,7 @@ class Simulador(models.Model):
 	cantidad_Cilindros = models.IntegerField(null=True)
 	numero_Expanciones = models.IntegerField(null=True)
 	velocidad_Cabina = models.FloatField(null=True)
+	diametro_Cable = models.FloatField(null=True)
 	usuario = models.ForeignKey(Usuario, null=True, blank=True, on_delete= models.CASCADE)
 	
 class Piston(models.Model):
