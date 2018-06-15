@@ -1,156 +1,104 @@
 {% extends 'base/base.html' %}
-
+{% load staticfiles %}
 {% block content %}
-  <div class= "row">
-    <div class= "col-md-8 col-sm-12">
-
-        {% block main-content %}
-<form method="post">
-  {% csrf_token %}
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-<div class="container">
-
-       <table class="table table-striped">
-          <tbody>
-             <tr>
-                <td colspan="1">
-                   <form class="well form-horizontal">
-                      <fieldset>
-                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="{{form.numero_Cables.name}}">{{form.numero_Cables.label}}</label>
-                            <div class="col-md-8 inputGroupContainer">
-                               {{form.numero_Cables}}
+{%block extrahead%}
+<!--Se llama el estilo del tema darkly en bootstrap-->
+<link href="{% static 'css/darkly.min.css' %}" rel="stylesheet" type="text/css"/>
+{%endblock%}
+<body>
+    <!--Es un contenedor donde se encuentra el formulario y las tablas de resultados-->
+    <div class="jumbotron">
+        <form>
+            <legend>
+                Ingrese los Datos Requeridos para la Simulacion
+            </legend>
+            <!--Cada div class=form- group row copiar y pegar para agregar dos campos-->
+            <div class="form-group row align-items-center">
+                <!--Cada div class=col-sm..... es un campo-->
+                <div class="col-sm-6">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                Ingrese Altura
                             </div>
-                         </div>
-                         
-                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="{{form.carga_Nominal.name}}">{{form.carga_Nominal.label}}</label>
-                            <div class="col-md-8 inputGroupContainer">
-                               {{form.carga_Nominal}}
+                        </div>
+                        <input class="form-control" id="inlineFormInputGroupUsername" placeholder="Altura" type="text">
+                        </input>
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                Metros
                             </div>
-                         </div>
-
-                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="{{form.recorrido_Cabina.name}}">{{form.recorrido_Cabina.label}}</label>
-                            <div class="col-md-8 inputGroupContainer">
-                               {{form.recorrido_Cabina}}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                Ingrese Area
                             </div>
-                         </div>
-                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="{{form.recorido_Superior_Piston.name}}">{{form.recorido_Superior_Piston.label}}</label>
-                            <div class="col-md-8 inputGroupContainer">
-                               {{form.recorido_Superior_Piston}}
+                        </div>
+                        <input class="form-control" id="inlineFormInputGroupUsername" placeholder="Altura" type="text">
+                        </input>
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                Metros Cuadrados
                             </div>
-                         </div>
-                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="{{form.cantidad_Pistones.name}}">{{form.cantidad_Pistones.label}}</label>
-                            <div class="col-md-8 inputGroupContainer">
-                               {{form.cantidad_Pistones}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row align-items-center">
+                <div class="col-sm-6 ">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                Otra cosa
                             </div>
-                         </div>
-                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="{{form.cantidad_Cilindros.name}}">{{form.cantidad_Cilindros.label}}</label>
-                            <div class="col-md-8 inputGroupContainer">
-                               {{form.cantidad_Cilindros}}
+                        </div>
+                        <input class="form-control" id="inlineFormInputGroupUsername" placeholder="Altura" type="text">
+                        </input>
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                ml
                             </div>
-                         </div>
-                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="{{form.numero_Expanciones.name}}">{{form.numero_Expanciones.label}}</label>
-                            <div class="col-md-8 inputGroupContainer">
-                               {{form.numero_Expanciones}}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                Otro campo
                             </div>
-                         </div>
-                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="{{form.velocidad_Cabina.name}}">{{form.velocidad_Cabina.label}}</label>
-                            <div class="col-md-8 inputGroupContainer">
-                               {{form.velocidad_Cabina}}
+                        </div>
+                        <input class="form-control" id="inlineFormInputGroupUsername" placeholder="Altura" type="text">
+                        </input>
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                gramos
                             </div>
-                         </div>                         
-                        
-                        <div class="clearfix"></div>
-                        <button type="submit" class="btn btn-info btn-lg btn-responsive" id="btnsimular" name= "btnsimular" > <span class="glyphicon glyphicon"></span> Simular</button>
-
-                        
-                      </fieldset>
-                   </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <table class="table table-hover row-md-3">
+            <tr class="table-success">
+                <th scope="row">
+                    Success
+                </th>
+                <td>
+                    Column content
                 </td>
-                
-             </tr>
-          </tbody>
-       </table>
+                <td>
+                    Column content
+                </td>
+                <td>
+                    Column content
+                </td>
+            </tr>
+        </table>
     </div>
-  
-</form>
-
-
-
-
-{% endblock %}
-
-{% block sidebar %}
-
-        <div class="container">
-          <table class="table table-striped">
-            <tbody>
-               <tr>
-                  <td colspan="1">
-                     <form class="well form-horizontal">
-                        <fieldset>
-                         <table class="table">
-                          <thead class="thead-dark">
-                            <tr>
-                              <th scope="col"># </th>
-                              <th scope="col">Coefciente de seguridad</th>
-                              <th scope="col">Presion estatica del piston</th>
-                              <th scope="col">Masa del vastago</th>
-                              <th scope="col">Presion minima bomba</th>
-                              <th scope="col">Recorrida del piston</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <th scope="row">1</th>
-                              <td>{{coeficiente}}</td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                            </tr>
-                            <tr>
-                              <th scope="row">2</th>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                            </tr>
-                            <tr>
-                              <th scope="row">3</th>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                            </tr>
-                          </tbody>
-                        </table>
-                        <div class= "row">
-                        <div class= "col-md-8 col-sm-12">
-                          <div class="clearfix"></div>
-                          <button type="submit" class="btn btn-info btn-lg btn-responsive" id="btnGuardar"> <span class="glyphicon glyphicon"></span> Guardar</button>
-
-                      </form>
-                </td>
-                
-             </tr>
-          </tbody>
-       </table>
-
-          </div>
-            
-
-{% endblock %}
+</body>
 {% endblock %}
