@@ -6,8 +6,8 @@
             <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" name="viewport">
                 <title>
                     {%block title%} KRVS Simulator {%endblock%}
-                    {%block extrahead%}{%endblock%}
                 </title>
+                {%block extrahead%}{%endblock%}
                 <!--Agregando icono al title-->
                 <link href="{% static 'imagenes/KRVS_icono.ico' %}" rel="Shortcut Icon" type="image/x-icon"/>
                 <!--Agregando estilo personalizado utilizado para el menu de navegacion-->
@@ -71,12 +71,7 @@
             </nav>
         </header>
         {% block body%}
-        {% block content %}
-        {% block main-content %}
-        {% endblock %}
-        {% block sidebar %}
-        {% endblock %}
-        {% endblock %}
+        
         {% endblock %}
         <!--Script necesario para bootstrap-->
         <script src="{% static 'js/bootstrap.min.js' %}" type="text/javascript">

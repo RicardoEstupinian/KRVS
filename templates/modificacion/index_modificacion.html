@@ -1,0 +1,92 @@
+{% extends 'base/base.html' %}
+{% load staticfiles %}
+{%block body%}
+
+{%block extrahead%}
+<!--Se llama el estilo del tema darkly en bootstrap-->
+<link href="{% static 'css/darkly.min.css' %}" rel="stylesheet" type="text/css"/>
+{%endblock%}
+<div class="jumbotron">
+    <div class="form-group row align-items-center">
+        <legend>
+            Modificacion de Simulacion Anterior
+        </legend>
+        <!--Dentro de este col se pueden agregar formularios o trackbar-->
+        <div class="col-sm-9">
+            <input id="myRange" max="200" min="0" onchange="modificar()" type="range" value="20"/>
+            <p id="demo">
+            </p>
+        </div>
+        <!--Aqui se muestra las consultas de las simulaciones anteriores-->
+        <div class="col-sm-3">
+            <div class="card text-white bg-dark mb-3" style="max-width: 20rem">
+                <div class="card-header">
+                    Simulacion
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">
+                        Dark card title
+                    </h4>
+                    <p class="card-text">
+                        Some quick example text to build on the card title and make up the bulk of the card's content.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="jumbotron">
+    <div class="form-group row align-items-center">
+        <div class="col-sm-6">
+            <legend>
+                Simulacion Anterior
+            </legend>
+            <table class="table table-hover row-md-3">
+                <tr class="table-success">
+                    <th scope="row">
+                        Datos
+                    </th>
+                    <td>
+                        Resultados de Simulacion
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Area piston
+                    </th>
+                    <td>
+                        80 metros cuadrados
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-sm-6">
+            <legend>
+                Simulacion Nueva
+            </legend>
+            <table class="table table-hover row-md-3">
+                <tr class="table-success">
+                    <th scope="row">
+                        Datos
+                    </th>
+                    <td>
+                        Resultados de Simulacion
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Area piston
+                    </th>
+                    <td>
+                        50 metros cuadrados
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<!--Script que tiene la funcion para obetener lo valores de la modificacion"-->
+<script src="{% static 'js/funcionModificacion.js' %}" type="text/javascript">
+</script>
+<!--Se mostraran las simulaciones anteriores-->
+{%endblock%}

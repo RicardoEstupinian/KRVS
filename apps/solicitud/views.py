@@ -1,3 +1,4 @@
 from django.shortcuts import render
 
-# Create your views here.
+def modificacion(request):
+	return render(request,'modificacion/index_modificacion.html')

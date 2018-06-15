@@ -1,104 +1,103 @@
 {% extends 'base/base.html' %}
 {% load staticfiles %}
-{% block content %}
-{%block extrahead%}
+
+{% block body %}
 <!--Se llama el estilo del tema darkly en bootstrap-->
+{%block extrahead%}
 <link href="{% static 'css/darkly.min.css' %}" rel="stylesheet" type="text/css"/>
 {%endblock%}
-<body>
-    <!--Es un contenedor donde se encuentra el formulario y las tablas de resultados-->
-    <div class="jumbotron">
-        <form>
-            <legend>
-                Ingrese los Datos Requeridos para la Simulacion
-            </legend>
-            <!--Cada div class=form- group row copiar y pegar para agregar dos campos-->
-            <div class="form-group row align-items-center">
-                <!--Cada div class=col-sm..... es un campo-->
-                <div class="col-sm-6">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">
-                                Ingrese Altura
-                            </div>
-                        </div>
-                        <input class="form-control" id="inlineFormInputGroupUsername" placeholder="Altura" type="text">
-                        </input>
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">
-                                Metros
-                            </div>
+<!--Es un contenedor donde se encuentra el formulario y las tablas de resultados-->
+<div class="jumbotron">
+    <form>
+        <legend>
+            Ingrese los Datos Requeridos para la Simulacion
+        </legend>
+        <!--Cada div class=form- group row copiar y pegar para agregar dos campos-->
+        <div class="form-group row align-items-center">
+            <!--Cada div class=col-sm..... es un campo-->
+            <div class="col-sm-6">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            Ingrese Altura
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">
-                                Ingrese Area
-                            </div>
-                        </div>
-                        <input class="form-control" id="inlineFormInputGroupUsername" placeholder="Altura" type="text">
-                        </input>
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">
-                                Metros Cuadrados
-                            </div>
+                    <input class="form-control" id="inlineFormInputGroupUsername" placeholder="Altura" type="text">
+                    </input>
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            Metros
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="form-group row align-items-center">
-                <div class="col-sm-6 ">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">
-                                Otra cosa
-                            </div>
-                        </div>
-                        <input class="form-control" id="inlineFormInputGroupUsername" placeholder="Altura" type="text">
-                        </input>
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">
-                                ml
-                            </div>
+            <div class="col-sm-6">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            Ingrese Area
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">
-                                Otro campo
-                            </div>
-                        </div>
-                        <input class="form-control" id="inlineFormInputGroupUsername" placeholder="Altura" type="text">
-                        </input>
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">
-                                gramos
-                            </div>
+                    <input class="form-control" id="inlineFormInputGroupUsername" placeholder="Altura" type="text">
+                    </input>
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            Metros Cuadrados
                         </div>
                     </div>
                 </div>
             </div>
-        </form>
-        <table class="table table-hover row-md-3">
-            <tr class="table-success">
-                <th scope="row">
-                    Success
-                </th>
-                <td>
-                    Column content
-                </td>
-                <td>
-                    Column content
-                </td>
-                <td>
-                    Column content
-                </td>
-            </tr>
-        </table>
-    </div>
-</body>
+        </div>
+        <div class="form-group row align-items-center">
+            <div class="col-sm-6 ">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            Otra cosa
+                        </div>
+                    </div>
+                    <input class="form-control" id="inlineFormInputGroupUsername" placeholder="Altura" type="text">
+                    </input>
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            ml
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            Otro campo
+                        </div>
+                    </div>
+                    <input class="form-control" id="inlineFormInputGroupUsername" placeholder="Altura" type="text">
+                    </input>
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            gramos
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <table class="table table-hover row-md-3">
+        <tr class="table-success">
+            <th scope="row">
+                Success
+            </th>
+            <td>
+                Column content
+            </td>
+            <td>
+                Column content
+            </td>
+            <td>
+                Column content
+            </td>
+        </tr>
+    </table>
+</div>
 {% endblock %}
