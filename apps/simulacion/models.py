@@ -14,6 +14,8 @@ class Simulador(models.Model):
 	numero_Expanciones = models.IntegerField(null=True)
 	velocidad_Cabina = models.FloatField(null=True)
 	diametro_Cable = models.FloatField(null=True)
+	peso_Ascensor = models.FloatField(null=True)
+	diametro_Piston = models.FloatField(null=True)
 	usuario = models.ForeignKey(Usuario, null=True, blank=True, on_delete= models.CASCADE)
 	
 class Piston(models.Model):
