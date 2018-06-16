@@ -16,7 +16,7 @@ class Simulador(models.Model):
 	diametro_Cable = models.FloatField(null=True)
 	peso_Ascensor = models.FloatField(null=True)
 	diametro_Piston = models.FloatField(null=True)
-	masa_Embolo = models.FloatField(null=True)
+	masa_Embolo = models.FloatField(null=True)	
 	usuario = models.ForeignKey(Usuario, null=True, blank=True, on_delete= models.CASCADE)
 	
 class Piston(models.Model):
@@ -28,6 +28,7 @@ class Piston(models.Model):
 	resistencia_Traccion_Acero = models.FloatField(null=True)
 	momento_Inercia = models.FloatField(null=True)
 	factor_Diametro = models.FloatField(null=True)
+
 	
 	
 class PistonTelescopico(models.Model):
@@ -50,6 +51,21 @@ class CableDeSuspension(models.Model):
 	carga_Rotura_Resestencia180 = models.FloatField(null=True)
 
 
+class Polea(models.Model):
+	diametro = models.FloatField(null=True)
+	peso = models.FloatField(null=True)
+
+class TipoPiston(models.Model):	
+	area_Embolo = models.FloatField(null=True)
+	longitud_Embolo = models.FloatField(null=True)
+	radio_Giro = models.FloatField(null=True)
+	momento_De_Inercia = models.FloatField(null=True)
+	aceite = models.FloatField(null= True)
+
+class Acero(models.Model):
+	tipo_Acero = models.FloatField(null=True)
+	normal = models.FloatField(null=True)
+	mecanico = models.FloatField(null=True)
 
 
 
@@ -59,3 +75,8 @@ class Ascensor(models.Model):
 	piston_Telescopico = models.ForeignKey(PistonTelescopico, null=True,blank=True, on_delete=models.CASCADE)
 	piston = models.ForeignKey(Piston, null=True,blank=True, on_delete=models.CASCADE)
 	cable = models.ForeignKey(CableDeSuspension, null=True,blank=True, on_delete=models.CASCADE)
+	Polea = models.ForeignKey(Polea, null=True,blank=True, on_delete=models.CASCADE)
+	acero = models.ForeignKey(Acero, null=True,blank=True, on_delete=models.CASCADE)
+	tipoPiston = models.ForeignKey(TipoPiston, null=True,blank=True, on_delete=models.CASCADE)
+	
+

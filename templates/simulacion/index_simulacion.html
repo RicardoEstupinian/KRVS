@@ -166,7 +166,7 @@
                         
                         <div class="input-group-prepend">
                             <div class="input-group-text">
-                                Centimetros
+                                Milimetros
                             </div>
                         </div>
                     </div>
@@ -223,46 +223,136 @@
                     </div>
                 </div>
             </div>
-
-
+            
             <div class="clearfix"></div>
                         <button type="submit" class="btn btn-info btn-lg btn-responsive" id="btnsimular" name= "btnsimular" > <span class="glyphicon glyphicon"></span> Simular</button>
 
         </form>
         <br>
-        <table class="table table-hover row-md-3">
-            <tr class="table-success">
-                <th scope="row">
-                    Coeficiente de seguridad
-                </th>
-                <td>
-                    {{coeficiente}}
-                </td>
-                <td>
-                    Presion piston
-                </td>
-                <td>
-                    {{pis}}
-                </td>
-                <td>
-                    Carga aplicada al piston
-                </td>
-                <td>
-                    {{carga_Piston}}
-                </td>
-                <td>
-                    Velocidad del piston
-                </td>
-                <td>
-                    {{velocidad_P}}
-                </td>
-                <td>
-                    Caudal de la bomba
-                </td>
-                <td>
-                    {{caudal_Bomba}}
-                </td>
-            </tr>
-        </table>
-    </div>
+        <legend>
+        Resultados
+        </legend>            
+            <table class="table table-hover row-md-6">
+                <tr class="table-success">
+                    <th scope="row">
+                       Datos
+                    </th>
+                    <td>
+                       Resultados de Simulacion
+                   </td>
+                   <td>
+                       Unidades de medida
+                   </td>
+                </tr>
+               <tr>
+                    <th>
+                        Coeficiente de seguridad
+                    </th>
+                    <td>
+                        {{coeficiente}}
+                    </td>
+                    <td>
+                    -------
+                    </td>                    
+                </tr>
+                <tr>
+                    <th>
+                        Presion piston
+                    </th>
+                    <td>
+                       {{pis}}
+                    </td>
+                    <td>
+                    Pascales
+                    </td>                    
+                </tr>
+                <tr>
+                    <th>
+                        Carga minima del piston
+                    </th>
+                    <td>
+                        {{carga_Piston}}
+                    </td>
+                    <td>
+                        Newton
+                    </td>  
+                </tr>
+                <tr>
+                    <th>
+                        Maxima carga del piston
+                    </th>
+                    <td>
+                        {{carga}}
+                    </td>
+                    <td>
+                        Newton
+                    </td>  
+                </tr>
+                <tr>
+                    <th>
+                        Velocidad Piston
+                   </th>
+                    <td>
+                       {{velocidad_P}}
+                   </td>
+                   <td>
+                    M/s
+                    </td>  
+                </tr>
+
+                <tr>
+                    <th>
+                        Peso de poleas
+                    </th>
+                    <td>
+                        {{peso_Polea}}
+                    </td>
+                    <td>
+                        Kilogramos
+                    </td>  
+                </tr>
+                <tr>
+                    <th>
+                        Diametro de poleas
+                    </th>
+                    <td>
+                       {{diametro_Polea}}
+                    </td>
+                    <td>
+                        Milimetros
+                    </td>  
+                </tr>
+                <tr>
+                    <th>
+                        Caudal de la bomba
+                    </th>
+                    <td>
+                        {{caudal_Bomba}}
+                    </td>
+                    <td>
+                    metros cubicos/ segundo
+                    </td>
+                </tr>
+                     
+                <tr>
+                    <th>
+                        Aceite en circulacion
+                    </th>
+                    <td>
+                        {{aceite}}
+                   </td>
+                   <td>
+                        litros
+                    </td>  
+                </tr>
+            </div>
+        <div class="col-sm-6">                            
+    </table>        
+                                                
+
+        
+                         
+                        
+                                    
+    
 {% endblock %}
