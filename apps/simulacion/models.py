@@ -16,6 +16,7 @@ class Simulador(models.Model):
 	diametro_Cable = models.FloatField(null=True)
 	peso_Ascensor = models.FloatField(null=True)
 	diametro_Piston = models.FloatField(null=True)
+	masa_Embolo = models.FloatField(null=True)
 	usuario = models.ForeignKey(Usuario, null=True, blank=True, on_delete= models.CASCADE)
 	
 class Piston(models.Model):
@@ -58,6 +59,3 @@ class Ascensor(models.Model):
 	piston_Telescopico = models.ForeignKey(PistonTelescopico, null=True,blank=True, on_delete=models.CASCADE)
 	piston = models.ForeignKey(Piston, null=True,blank=True, on_delete=models.CASCADE)
 	cable = models.ForeignKey(CableDeSuspension, null=True,blank=True, on_delete=models.CASCADE)
-	
-
-

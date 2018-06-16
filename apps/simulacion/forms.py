@@ -18,6 +18,7 @@ class SimulacionForm(forms.ModelForm):
 			'diametro_Cable',
 			'peso_Ascensor',
 			'diametro_Piston',
+			'masa_Embolo',
 			'usuario',
 		]		
 
@@ -33,6 +34,7 @@ class SimulacionForm(forms.ModelForm):
 			'diametro_Cable': 'Diametro del cable',
 			'peso_Ascensor': 'Peso del ascensor',
 			'diametro_Piston': 'Diametro del piston',
+			'masa_Embolo': 'Masa del embolo',
 			'usuario': 'Usuario',
 		}
 
@@ -50,5 +52,6 @@ class SimulacionForm(forms.ModelForm):
 			'velocidad_Cabina': forms.TextInput(attrs={'class': 'form-control', 'placeholder':"velocidad"}),
 			'peso_Ascensor': forms.TextInput(attrs={'class': 'form-control', 'placeholder':"peso"}),
 			'diametro_Piston': forms.TextInput(attrs={'class': 'form-control', 'placeholder':"diametro"}),
+			'masa_Embolo': forms.TextInput(attrs={'class': 'form-control', 'placeholder':"masa embolo"}),
 			'usuario': forms.Select(attrs={'class': 'form-control'}),
 		}

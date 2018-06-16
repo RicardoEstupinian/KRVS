@@ -22,6 +22,12 @@ def simulador_view(request):
 	diametro_P = 0
 	masa_Vastago = 0
 	presion_Embolo = 0
+	carga_Piston = 0
+	masa_E = 0
+	cantidad_C = 0
+	velocidad_C = 0
+	velocidad_P = 0
+	caudal_Bomba = 0
 
 
 	if request.method == 'POST':
@@ -38,6 +44,11 @@ def simulador_view(request):
 			sobre_Superior_Piston = request.POST.get('recorido_Superior_Piston')
 			diametro_P = request.POST.get('diametro_Piston')
 			cantidad_P = request.POST.get('cantidad_Pistones')
+			masa_E = request.POST.get('masa_Embolo')
+			cantidad_C = request.POST.get('cantidad_Cilindros')
+			velocidad_C = request.POST.get('velocidad_Cabina')
+
+			velocidad_P = float(velocidad_C)/2
 
 			recorrido_Total_Piston = float(recorrido_Cabina) + float(sobre_Superior_Piston )
 
@@ -53,8 +64,10 @@ def simulador_view(request):
 	
 
 			coeficiente_Seg = (cargaRotura * float(numero_C))/(float(carga_N) + float(peso_Ascens))
-			masa_Vastago = ((recorrido_Total_Piston/100)* masa_Lineal) + masa_Union*(2)
-			presion_Embolo = ((float(carga_N)+ float(peso_Ascens))+ (float(cantidad_P)*masa_Vastago))/(((float(cantidad_P)*3.1416)*(float(diametro_P)*float(diametro_P)))/4)
+			masa_Vastago = ((recorrido_Total_Piston/100)* masa_Lineal) + masa_Union*(3)
+			presion_Embolo = (((float(carga_N)+ float(peso_Ascens))+ (float(cantidad_P)*masa_Vastago)) / (float(cantidad_P)*3.1416*((float(diametro_P)*float(diametro_P)/100)/4)))*9.8
+			carga_Piston =1.4*9.8*(((float(carga_N)+float(peso_Ascens))/float(cantidad_C)) + 0.64*float(masa_E))
+			caudal_Bomba = float(velocidad_C)*(((5*6*3.1416)*((float(diametro_P)/100)*(float(diametro_P)/100)))/4)
 
 			form = SimulacionForm(request.POST)
 			if form.is_valid():
@@ -63,4 +76,4 @@ def simulador_view(request):
 		form = SimulacionForm()
 
 
-	return render(request, 'simulacion/index_simulacion.html' , {'form':form, 'coeficiente':coeficiente_Seg,'pis':presion_Embolo})
+	return render(request, 'simulacion/index_simulacion.html' , {'caudal_Bomba':caudal_Bomba,'form':form, 'coeficiente':coeficiente_Seg,'pis':round(presion_Embolo),'carga_Piston':carga_Piston, 'velocidad_P': velocidad_P})
