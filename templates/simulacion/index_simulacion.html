@@ -1,359 +1,355 @@
-{% extends 'base/base.html' %}
-{% load staticfiles %}
-{% block body %}
-{%block extrahead%}
+{% extends 'base/base.html' %} {% load staticfiles %} {% block body %} {%block extrahead%}
 <!--Se llama el estilo del tema darkly en bootstrap-->
-<link href="{% static 'css/darkly.min.css' %}" rel="stylesheet" type="text/css"/>
-{%endblock%}
-    <!--Es un contenedor donde se encuentra el formulario y las tablas de resultados-->
-    <div class="jumbotron">
-        <form method="post">
-            {% csrf_token %}
+<link href="{% static 'css/darkly.min.css' %}" rel="stylesheet" type="text/css" /> {%endblock%}
+<!--Es un contenedor donde se encuentra el formulario y las tablas de resultados-->
+<div class="jumbotron">
+    <form method="post">
+        {% csrf_token %}
+        <div class="col-sm-6">
             <legend>
                 Ingrese los Datos Requeridos para la Simulacion
             </legend>
-            <!--Cada div class=form- group row copiar y pegar para agregar dos campos-->
-            <div class="form-group row align-items-center">
-                <!--Cada div class=col-sm..... es un campo-->
-                <div class="col-sm-6">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">
-                                Ingrese cantidad de cables
-                            </div>
-                        </div>
-                        
-                        </input>
-                        {{form.numero_Cables}}
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">
-                                Unidades
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">
-                                Ingrese la carga nominal del ascensor
-                            </div>
-                        </div>                        
-                        {{form.carga_Nominal}}
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">
-                                Kilogramos
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group row align-items-center">
-                <div class="col-sm-6 ">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">
-                                Elija la cantidad de pisos
-                            </div>
-                        </div>                        
-                        {{form.recorrido_Cabina}}
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">
-                                Metros
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">
-                                Ingrese el recorrido superior del piston
-                            </div>
-                        </div>                        
-                        {{form.recorido_Superior_Piston}}                        
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">
-                                metros
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group row align-items-center">
-                <!--Cada div class=col-sm..... es un campo-->
-                <div class="col-sm-6">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">
-                                Ingrese la cantidad de pistones
-                            </div>
-                        </div>                        
-                        {{form.cantidad_Pistones}} 
-                        {{form.velocidades}}                       
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">
-                                Unidades
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">
-                                Ingrese la cantidad de Cilindros
-                            </div>
-                        </div>
-                        
-                        {{form.cantidad_Cilindros}}
-                        
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">
-                                Unidades
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group row align-items-center">
-                <!--Cada div class=col-sm..... es un campo-->
-                <div class="col-sm-6">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">
-                                Ingrese la cantidad de expanciones
-                            </div>
-                        </div>
-                        
-                        {{form.numero_Expanciones}}
-                        
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">
-                                Unidades
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">
-                                Ingrese Velocidad de ascensor
-                            </div>
-                        </div>
-                        
-                        {{form.velocidad_Cabina}}
-                        
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">
-                                Metros por segundo
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-                        <div class="form-group row align-items-center">
-                <!--Cada div class=col-sm..... es un campo-->
-                <div class="col-sm-6">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">
-                                Ingrese el diametro del cable
-                            </div>
-                        </div>
-                        
-                        {{form.diametro_Cable}}
-                        
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">
-                                Milimetros
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">
-                                Ingrese el peso del ascensor
-                            </div>
-                        </div>
-                        {{form.peso_Ascensor}}
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">
-                                Kilogramos
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        </div>
 
-            <div class="form-group row align-items-center">
-                <!--Cada div class=col-sm..... es un campo-->
-                <div class="col-sm-6">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">
-                                Ingrese el diametro del piston
-                            </div>
-                        </div>
-                        
-                        {{form.diametro_Piston}}
-                        
-                        <div class="input-group-prepend">
-                            <div class="input-group-text ">
-                                Centimetros
-                            </div>
+        <!--Cada div class=form- group row copiar y pegar para agregar dos campos-->
+        <div class="form-group row align-items-center">
+            <!--Cada div class=col-sm..... es un campo-->
+            <div class="col-sm-6">
+                <div class="input-group">
+                    <div class="col-sm-4">
+                        <div class="input-group-text">
+                            Cantidad de Cables
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">
-                                Ingrese la masa del embolo
-                            </div>
-                        </div>
-                        {{form.masa_Embolo}}
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">
-                                kilogramos
-                            </div>
+
+                    </input>
+                    {{form.numero_Cables}}
+                    <div class="col-sm-3">
+                        <div class="input-group-text">
+                            Unidades
                         </div>
                     </div>
                 </div>
             </div>
-            
-            <div class="clearfix"></div>
-                        <button type="submit" class="btn btn-info btn-lg btn-responsive" id="btnsimular" name= "btnsimular" > <span class="glyphicon glyphicon"></span> Simular</button>
+            <div class="col-sm-6">
+                <div class="input-group">
+                    <div class="col-sm-5">
+                        <div class="input-group-text">
+                            Carga Nominal del Ascensor
+                        </div>
+                    </div>
+                    {{form.carga_Nominal}}
+                    <div class="col-sm-3">
+                        <div class="input-group-text">
+                            Kilogramos
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row align-items-center">
+            <div class="col-sm-6 ">
+                <div class="input-group">
+                    <div class="col-sm-4">
+                        <div class="input-group-text">
+                            Cantidad de pisos
+                        </div>
+                    </div>
+                    {{form.recorrido_Cabina}}
+                    <div class="col-sm-3">
+                        <div class="input-group-text">
+                            Unidades
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="input-group">
+                    <div class="col-sm-5">
+                        <div class="input-group-text">
+                            Recorrido Superior del Piston
+                        </div>
+                    </div>
+                    {{form.recorido_Superior_Piston}}
+                    <div class="col-sm-3">
+                        <div class="input-group-text">
+                            Metros
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row align-items-center">
+            <!--Cada div class=col-sm..... es un campo-->
+            <div class="col-sm-6">
+                <div class="input-group">
+                    <div class="col-sm-4">
+                        <div class="input-group-text">
+                            Cantidad de Pistones
+                        </div>
+                    </div>
+                    {{form.cantidad_Pistones}} {{form.velocidades}}
+                    <div class="col-sm-3">
+                        <div class="input-group-text">
+                            Unidades
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="input-group">
+                    <div class="col-sm-5">
+                        <div class="input-group-text">
+                            Cantidad de Cilindros
+                        </div>
+                    </div>
 
-        </form>
-        <br>
-        <legend>
+                    {{form.cantidad_Cilindros}}
+
+                    <div class="col-sm-3">
+                        <div class="input-group-text">
+                            Unidades
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row align-items-center">
+            <!--Cada div class=col-sm..... es un campo-->
+            <div class="col-sm-6">
+                <div class="input-group">
+                    <div class="col-sm-4">
+                        <div class="input-group-text">
+                            Cantidad de Expanciones
+                        </div>
+                    </div>
+
+                    {{form.numero_Expanciones}}
+
+                    <div class="col-sm-3">
+                        <div class="input-group-text">
+                            Unidades
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="input-group">
+                    <div class="col-sm-5">
+                        <div class="input-group-text ">
+                            Velocidad de Ascensor
+                        </div>
+                    </div>
+
+                    {{form.velocidad_Cabina}}
+
+                    <div class="col-sm-3">
+                        <div class="input-group-text">
+                            Metros/Segundo
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row align-items-center">
+            <!--Cada div class=col-sm..... es un campo-->
+            <div class="col-sm-6">
+                <div class="input-group">
+                    <div class="col-sm-4">
+                        <div class="input-group-text">
+                            Diametro del Cable
+                        </div>
+                    </div>
+
+                    {{form.diametro_Cable}}
+
+                    <div class="col-sm-3">
+                        <div class="input-group-text">
+                            Milimetros
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="input-group">
+                    <div class="col-sm-5">
+                        <div class="input-group-text">
+                            Peso Del Ascensor
+                        </div>
+                    </div>
+                    {{form.peso_Ascensor}}
+                    <div class="col-sm-3">
+                        <div class="input-group-text">
+                            Kilogramos
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group row align-items-center">
+            <!--Cada div class=col-sm..... es un campo-->
+            <div class="col-sm-6">
+                <div class="input-group">
+                    <div class="col-sm-4">
+                        <div class="input-group-text">
+                            Diametro del Piston
+                        </div>
+                    </div>
+
+                    {{form.diametro_Piston}}
+
+                    <div class="col-sm-3">
+                        <div class="input-group-text ">
+                            Centimetros
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="input-group">
+                    <div class="col-sm-5">
+                        <div class="input-group-text">
+                            Masa Del Embolo
+                        </div>
+                    </div>
+                    {{form.masa_Embolo}}
+                    <div class="col-sm-3">
+                        <div class="input-group-text">
+                            Kilogramos
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div align="center" class="col-12">
+            <button type="submit" class="btn btn-info btn-lg btn-responsive" id="btnsimular" name="btnsimular" />
+            <span class="glyphicon glyphicon"></span> Simular</button>
+        </div>
+
+
+
+    </form>
+    <br>
+    <legend>
         Resultados
-        </legend>            
-            <table class="table table-hover row-md-6">
-                <tr class="table-success">
-                    <th scope="row">
-                       Datos
-                    </th>
-                    <td>
-                       Resultados de Simulacion
-                   </td>
-                   <td>
-                       Unidades de medida
-                   </td>
-                </tr>
-               <tr>
-                    <th>
-                        Coeficiente de seguridad
-                    </th>
-                    <td>
-                        {{coeficiente}}
-                    </td>
-                    <td>
-                    -------
-                    </td>                    
-                </tr>
-                <tr>
-                    <th>
-                        Presion piston
-                    </th>
-                    <td>
-                       {{pis}}
-                    </td>
-                    <td>
-                    Pascales
-                    </td>                    
-                </tr>
-                <tr>
-                    <th>
-                        Carga minima del piston
-                    </th>
-                    <td>
-                        {{carga_Piston}}
-                    </td>
-                    <td>
-                        Newton
-                    </td>  
-                </tr>
-                <tr>
-                    <th>
-                        Maxima carga del piston
-                    </th>
-                    <td>
-                        {{carga}}
-                    </td>
-                    <td>
-                        Newton
-                    </td>  
-                </tr>
-                <tr>
-                    <th>
-                        Velocidad Piston
-                   </th>
-                    <td>
-                       {{velocidad_P}}
-                   </td>
-                   <td>
-                    M/s
-                    </td>  
-                </tr>
+    </legend>
+    <table class="table table-hover row-md-6">
+        <tr class="table-success">
+            <th scope="row">
+                Datos
+            </th>
+            <td>
+                Resultados de Simulacion
+            </td>
+            <td>
+                Unidades de medida
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Coeficiente de seguridad
+            </th>
+            <td>
+                {{coeficiente}}
+            </td>
+            <td>
+                -------
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Presion piston
+            </th>
+            <td>
+                {{pis}}
+            </td>
+            <td>
+                Pascales
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Carga minima del piston
+            </th>
+            <td>
+                {{carga_Piston}}
+            </td>
+            <td>
+                Newton
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Maxima carga del piston
+            </th>
+            <td>
+                {{carga}}
+            </td>
+            <td>
+                Newton
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Velocidad Piston
+            </th>
+            <td>
+                {{velocidad_P}}
+            </td>
+            <td>
+                Metros/Segundos
+            </td>
+        </tr>
 
-                <tr>
-                    <th>
-                        Peso de poleas
-                    </th>
-                    <td>
-                        {{peso_Polea}}
-                    </td>
-                    <td>
-                        Kilogramos
-                    </td>  
-                </tr>
-                <tr>
-                    <th>
-                        Diametro de poleas
-                    </th>
-                    <td>
-                       {{diametro_Polea}}
-                    </td>
-                    <td>
-                        Milimetros
-                    </td>  
-                </tr>
-                <tr>
-                    <th>
-                        Caudal de la bomba
-                    </th>
-                    <td>
-                        {{caudal_Bomba}}
-                    </td>
-                    <td>
-                    metros cubicos/ segundo
-                    </td>
-                </tr>
-                     
-                <tr>
-                    <th>
-                        Aceite en circulacion
-                    </th>
-                    <td>
-                        {{aceite}}
-                   </td>
-                   <td>
-                        litros
-                    </td>  
-                </tr>
-            </div>
-        <div class="col-sm-6">                            
-    </table>        
-                                                
+        <tr>
+            <th>
+                Peso de poleas
+            </th>
+            <td>
+                {{peso_Polea}}
+            </td>
+            <td>
+                Kilogramos
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Diametro de poleas
+            </th>
+            <td>
+                {{diametro_Polea}}
+            </td>
+            <td>
+                Milimetros
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Caudal de la bomba
+            </th>
+            <td>
+                {{caudal_Bomba}}
+            </td>
+            <td>
+                Metros cubicos/ Segundo
+            </td>
+        </tr>
 
-        
-                         
-                        
-                                    
-    
-{% endblock %}
+        <tr>
+            <th>
+                Aceite en circulacion
+            </th>
+            <td>
+                {{aceite}}
+            </td>
+            <td>
+                Litros
+            </td>
+        </tr>
+</div>
+<div class="col-sm-6">
+    </table>
+
+    {% endblock %}
