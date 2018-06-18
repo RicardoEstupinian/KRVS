@@ -10,5 +10,6 @@ urlpatterns = [
     url(r'^simulacion/', include('apps.simulacion.urls',namespace="simulacion")),
     url(r'^inicio/', include('apps.inicio.urls',namespace="inicio")),
     url(r'^modificacion/', include('apps.solicitud.urls',namespace="modificacion")),
+    url(r'^informacion/', include('apps.inicio.urls',namespace="informacion")),
     url(r'^$', login,{'template_name':'login/login_index.html'},name='login'),
 ]

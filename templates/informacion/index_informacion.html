@@ -1,0 +1,50 @@
+{% extends 'base/base.html' %} {% load staticfiles %} {% block body %} {%block extrahead%}
+<!--Se llama el estilo del tema darkly en bootstrap-->
+
+<link href="{% static 'css/darkly.min.css' %}" rel="stylesheet" type="text/css" /> {%endblock%}
+
+<div class="jumbotron">
+    <div align="center">
+        <legend>Informacion de Uso de la App Web</legend>
+        <div align="left" class="card text-white bg-secondary mb-3" style="max-width: 40rem;">
+            <div class="card-header">Informacion</div>
+            <div class="card-body">
+                <h4 align="center" class="card-title">Uso de la Aplicacion</h4>
+                <p class="card-text">1. Para hacer uso de la aplicacion debe de estar registrado en la base de datos, como usuario.</p>
+                <p class="card-text">2. Debe ingresar todos los datos requeridos para la simulacion.</p>
+                <p class="card-text">3. Si el usuario intenta escribir letras en los campos que se requiere de numeros, la app no le permitira
+                    teclear caracteres que no sean numericos.</p>
+                <p class="card-text">4. El usuario puede guardar todas las simulaciones que desee.</p>
+                <p class="card-text">5. El usuario tendra la posibilidad de elegir una simulacion anterior y modificar ciertos parametros que
+                    estan permitidos en esta funcion.</p>
+            </div>
+        </div>
+        <legend>Desarrolladores</legend>
+        <div class="card text-white bg-info mb-3" style="max-width: 40rem;">
+            <div class="card-header">Estupinian Lopez, Ricardo Bladimir</div>
+            <div class="card-body">
+                <p class="card-text">Roles: Gerente de Proyecto, Programador</p>
+                <p class="card-text">Carnet: EL16002</p>
+            </div>
+        </div>
+        <div class="card text-white bg-info mb-3" style="max-width: 40rem;">
+            <div class="card-header">Maravilla Lopez, Kilmer Fabricio</div>
+            <div class="card-body">
+                <p class="card-text">Roles: Analista, Programador</p>
+                <p class="card-text">Carnet: ML16006</p>
+            </div>
+        </div>
+
+        <legend>Informacion General del Grupo</legend>
+        <div class="card text-white bg-success mb-3" style="max-width: 40rem;">
+            <div class="card-header">Grupo # 10</div>
+            <div class="card-body">
+                <h4 class="card-title">Simulacion de Fenomeno Fisico.</h4>
+                <p class="card-text">Caso de Aplicacion: Prensa Hidarulica.</p>
+                <p class="card-text">Aplicacion Web: Simulador de Prensa Hidraulica para Ascensor.</p>
+                <p class="card-text">Integrantes : 2</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
