@@ -73,18 +73,18 @@ class SimulacionForm(forms.ModelForm):
 		# forms.select porque es una llave foranea
 
 		widgets = {
-			'numero_Cables': forms.TextInput(attrs={'class': 'form-control', 'placeholder':"Cables"}),
-			'carga_Nominal': forms.TextInput(attrs={'class': 'form-control', 'placeholder':"Peso"}),
+			'numero_Cables': forms.TextInput(attrs={'class': 'form-control', 'placeholder':"Cables",'onkeypress':"return validar(event)"}),
+			'carga_Nominal': forms.TextInput(attrs={'class': 'form-control', 'placeholder':"Peso",'onkeypress':"return validar(event)"}),
 			'recorrido_Cabina': forms.Select(attrs={'class': 'form-control'},choices=pisos),
-			'recorido_Superior_Piston': forms.TextInput(attrs={'class': 'form-control', 'placeholder':"Recorrido Piston"}),
-			'cantidad_Pistones': forms.TextInput(attrs={'class': 'form-control', 'placeholder':"Pistones"}),
-			'cantidad_Cilindros': forms.TextInput(attrs={'class': 'form-control', 'placeholder':"Cilindros"}),
+			'recorido_Superior_Piston': forms.TextInput(attrs={'class': 'form-control', 'placeholder':"Recorrido Piston",'onkeypress':"return validar(event)"}),
+			'cantidad_Pistones': forms.TextInput(attrs={'class': 'form-control', 'placeholder':"Pistones",'onkeypress':"return validar(event)"}),
+			'cantidad_Cilindros': forms.TextInput(attrs={'class': 'form-control', 'placeholder':"Cilindros",'onkeypress':"return validar(event)"}),
 			'numero_Expanciones': forms.Select(attrs={'class': 'form-control'},choices=expanciones),
-			'diametro_Cable': forms.TextInput(attrs={'class': 'form-control', 'placeholder':"Diametro Del Cable"}),
+			'diametro_Cable': forms.TextInput(attrs={'class': 'form-control', 'placeholder':"Diametro Del Cable",'onkeypress':"return validar(event)"}),
 			'velocidad_Cabina': forms.Select(attrs={'class': 'form-control'},choices= velocidades),
-			'peso_Ascensor': forms.TextInput(attrs={'class': 'form-control', 'placeholder':"Peso"}),
-			'diametro_Piston': forms.TextInput(attrs={'class': 'form-control', 'placeholder':"Diametro"}),
-			'masa_Embolo': forms.TextInput(attrs={'class': 'form-control', 'placeholder':"Masa Embolo"}),
+			'peso_Ascensor': forms.TextInput(attrs={'class': 'form-control', 'placeholder':"Peso",'onkeypress':"return validar(event)"}),
+			'diametro_Piston': forms.TextInput(attrs={'class': 'form-control', 'placeholder':"Diametro",'onkeypress':"return validar(event)"}),
+			'masa_Embolo': forms.TextInput(attrs={'class': 'form-control', 'placeholder':"Masa Embolo",'onkeypress':"return validar(event)"}),
 
 			
 		}
