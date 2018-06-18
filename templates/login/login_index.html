@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+{% load staticfiles%}
+<head>
+    <title> KRVS Hydraulics </title>
+    <link rel="stylesheet" type="text/css" href="{%static 'css/login.css' %}">
+    <link href="{% static 'imagenes/KRVS_icono.ico' %}" rel="Shortcut Icon" type="image/x-icon"/>
+</head>
+    <body background="{% static 'imagenes/fondo.jpg'%}">
+    <div class="login-box">
+    <img src="{%static 'imagenes/user.png' %}" class="avatar">
+        <h1>Iniciar sesion</h1>
+            <form>
+            <p>Usuario</p>
+            <input type="text" name="usuario" placeholder="Introduzca su ID">
+            <p>Password</p>
+            <input type="password" name="password" placeholder="Introduzca el password">
+            <input type="submit" name="submit" value="Login">
+            <a href="#">Olvido el password</a>
+            </form>
+        </div>
+
+    </body>
+</html>

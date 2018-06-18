@@ -10,4 +10,5 @@ urlpatterns = [
     url(r'^simulacion/', include('apps.simulacion.urls',namespace="simulacion")),
     url(r'^inicio/', include('apps.inicio.urls',namespace="inicio")),
     url(r'^modificacion/', include('apps.solicitud.urls',namespace="modificacion")),
+    url(r'^login/', include('apps.log.urls',namespace="login")),
 ]
