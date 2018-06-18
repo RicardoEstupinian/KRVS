@@ -56,7 +56,7 @@ def simulador_view(request):
 			numero_C = request.POST.get('numero_Cables')
 			carga_N = request.POST.get('carga_Nominal')
 			peso_Ascens = request.POST.get('peso_Ascensor')
-			recorrido_Cabina = request.POST.get('recorrido_Cabina')
+			recorrido_Cabina =(request.POST.get('recorrido_Cabina'))
 			sobre_Superior_Piston = request.POST.get('recorido_Superior_Piston')
 			diametro_P = request.POST.get('diametro_Piston')
 			cantidad_P = request.POST.get('cantidad_Pistones')
@@ -69,7 +69,7 @@ def simulador_view(request):
 			velocidad_P = float(velocidad_C)/2
 			diametro_Polea = 40*(float(diametro_C))
 
-			recorrido_Total_Piston = float(recorrido_Cabina) + float(sobre_Superior_Piston )
+			recorrido_Total_Piston = float(recorrido_Cabina)*2.5 + float(sobre_Superior_Piston )
 
 			
 			
@@ -106,10 +106,12 @@ def simulador_view(request):
 					break
 
 			form = SimulacionForm(request.POST)
+		
+		if 	'btnguardar' in request.POST:
+			form = SimulacionForm(request.POST)
 
 			if form.is_valid():
 				form.save()
-
 	else:
 		form = SimulacionForm()
 
