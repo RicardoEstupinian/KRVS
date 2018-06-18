@@ -78,8 +78,10 @@ def simulador_view(request):
 					peso_Polea = polea.peso
 
 			for cable in datoCable:
-				if cable.diametro == 10:
+				if coeficiente_Seg	< 12:
 					cargaRotura = cable.carga_Rotura_Resestencia160
+					coeficiente_Seg = (cargaRotura * float(numero_C))/(float(carga_N) + float(peso_Ascens))
+					break
 
 			for piston in dato_Piston:
 				if piston.diametro_Exterior == 	float(diametro_P):

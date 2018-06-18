@@ -78,5 +78,6 @@ class Ascensor(models.Model):
 	Polea = models.ForeignKey(Polea, null=True,blank=True, on_delete=models.CASCADE)
 	acero = models.ForeignKey(Acero, null=True,blank=True, on_delete=models.CASCADE)
 	tipoPiston = models.ForeignKey(TipoPiston, null=True,blank=True, on_delete=models.CASCADE)
+	simulador = models.OneToOneField(Simulador, null= True, blank=True, on_delete=models.CASCADE)
 	
 
