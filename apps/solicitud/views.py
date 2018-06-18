@@ -31,7 +31,7 @@ def modificacion(request):
 			idS = request.POST.get('usuario')
 			datoSimulacion = Simulador.objects.all()
 			for dato in datoSimulacion:
-				if dato.id == 100:
+				if int(dato.id) == int(idS):
 					
 					numero_Cables = dato.numero_Cables
 					carga_Nominal = dato.carga_Nominal
