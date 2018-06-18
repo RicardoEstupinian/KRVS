@@ -3,6 +3,8 @@
 <link href="{% static 'css/darkly.min.css' %}" rel="stylesheet" type="text/css"/>
 {%endblock%}
 <div class="jumbotron">
+    <form method="post">
+        {% csrf_token %}
     <legend>
         Modificacion de Simulacion Anterior
     </legend>
@@ -48,7 +50,7 @@
                         </p>
                     </th>
                     <td>
-                        
+                        {{recorrido_Cabina}}
                     </td>
                 </tr>
                 <tr>
@@ -58,7 +60,7 @@
                         </p>
                     </th>
                     <td>
-                        
+                        {{Recorrido_Superior_Piston}}
                     </td>
                 </tr>
                 <tr>
@@ -68,7 +70,7 @@
                         </p>
                     </th>
                     <td>
-                        
+                        {{cantidad_Pistones}}
                     </td>
                 </tr>
                 <tr>
@@ -78,7 +80,7 @@
                         </p>
                     </th>
                     <td>
-                        
+                        {{cantidad_Cilindros}}
                     </td>
                 </tr>
                 <tr>
@@ -88,7 +90,7 @@
                         </p>
                     </th>
                     <td>
-                        
+                        {{numero_Expanciones}}
                     </td>
                 </tr>
                 <tr>
@@ -98,7 +100,7 @@
                         </p>
                     </th>
                     <td>
-                        
+                        {{velocidad_Cabina}}
                     </td>
                 </tr>
                 <tr>
@@ -108,7 +110,7 @@
                         </p>
                     </th>
                     <td>
-                        
+                        {{diametro_Cable}}
                     </td>
                 </tr>
                 <tr>
@@ -118,7 +120,7 @@
                         </p>
                     </th>
                     <td>
-                        
+                        {{peso_Ascensor}}
                     </td>
                 </tr>
                 <tr>
@@ -128,7 +130,7 @@
                         </p>
                     </th>
                     <td>
-                        
+                        {{diametro_Piston}}
                     </td>
                 </tr>
                 <tr>
@@ -138,7 +140,7 @@
                         </p>
                     </th>
                     <td>
-                        
+                       {{masa_Embolo}} 
                     </td>
                 </tr>
             </table>
@@ -179,9 +181,56 @@
                         50 m
                     </th>
                 </tr>
+                <tr>
+                    <th>
+                        <p>
+                            Velocidad Ascensor
+                        </p>
+                    </th>
+                    <td>
+                       {{form.velocidad_Cabina}}
+                    </td>
+                    <td>
+                      velocidad de cabina  
+                    </td>
+                    <th>
+                        {{velocidad_P}}
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <p>
+                            Cantidad de pisos
+                        </p>
+                    </th>
+                    <td>
+                       {{form.recorrido_Cabina}}
+                    </td>
+                    <td>
+                        Carga maxima:
+                    </td>
+                    <th>
+                        {{presion_Embolo}}
+                    </th>
+                </tr>
+                
             </table>
+
+            {{form.usuario}}
+            <br>
+            <div align="center" class="col-12">
+            <button type="submit" class="btn btn-info btn-lg btn-responsive" id="btnsimular" name="btnsimular" />
+            <span class="glyphicon glyphicon"></span> Mostrar Simulacion</button>
+            <br>
+            <br>
+            <div align="center" class="col-12">
+            <button type="submit" class="btn btn-info btn-lg btn-responsive" id="btnmodificar" name="btnmodificar" />
+            <span class="glyphicon glyphicon"></span> Modificar Simulacion</button>
+
+        </div>
         </div>
     </div>
+    </form>
 </div>
 <!--Script que tiene la funcion para obetener lo valores de la modificacion"-->
 <script src="{% static 'js/funcionModificacion.js' %}" type="text/javascript">

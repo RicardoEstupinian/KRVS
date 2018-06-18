@@ -84,6 +84,7 @@ class ModificacionForm(forms.ModelForm):
 			'peso_Ascensor': forms.TextInput(attrs={'class': 'form-control', 'placeholder':"peso"}),
 			'diametro_Piston': forms.TextInput(attrs={'class': 'form-control', 'placeholder':"diametro"}),
 			'masa_Embolo': forms.TextInput(attrs={'class': 'form-control', 'placeholder':"masa embolo"}),
+			'usuario': forms.TextInput(attrs={'class': 'form-control', 'placeholder':"Ingrese el id de la simulacion"}),
 
 			
 		}
