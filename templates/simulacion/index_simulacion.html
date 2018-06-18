@@ -1,7 +1,6 @@
 {% extends 'base/base.html' %} {% load staticfiles %} {% block body %} {%block extrahead%}
 <!--Se llama el estilo del tema darkly en bootstrap-->
-<script src="{% static 'js/jquery-3.3.1.min.js' %}" type="text/javascript">
-</script>
+
 <link href="{% static 'css/darkly.min.css' %}" rel="stylesheet" type="text/css" /> {%endblock%}
 
 <!--Es un contenedor donde se encuentra el formulario y las tablas de resultados-->
@@ -363,4 +362,6 @@
 
 </table>
 <script src="{% static 'js/validacion.js' %}">
+</script>
+<script src="{% static 'js/jquery-3.3.1.min.js' %}" type="text/javascript">
 </script> {% endblock %}
