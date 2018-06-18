@@ -24,6 +24,12 @@ pisos= (
 		('9',9),
 		('10',10),
 	)
+expanciones= (
+		('1',1),
+		('2',2),
+		('3',3),		
+	)
+
 
 class ModificacionForm(forms.ModelForm):
 
