@@ -46,6 +46,7 @@ def simulador_view(request):
 		if 'btnsimular' in request.POST:
 			
 			form = SimulacionForm(request.POST)
+			
 			datoCable = CableDeSuspension.objects.all()
 			dato_Piston = Piston.objects.all()
 			dato_Polea = Polea.objects.all()
