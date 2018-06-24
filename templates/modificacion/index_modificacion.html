@@ -3,6 +3,95 @@
 <link href="{% static 'css/darkly.min.css' %}" rel="stylesheet" type="text/css"/>
 {%endblock%}
 <div class="jumbotron">
+    <form method="POST">
+        <div class="col-sm-12">
+            <legend>
+                Simulacion Nueva
+            </legend>
+            <table class="table table-hover row-md-3">
+                <tr class="table-success">
+                    <th scope="row">
+                        Datos
+                    </th>
+                    <td>
+                        Modificacion
+                    </td>
+                    <td>
+                        Nuevo Valor
+                    </td>
+                    <td>
+                        Resultados
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <p>
+                            Area piston
+                        </p>
+                    </th>
+                    <td>
+                        <input id="rango" max="200" min="0" onchange="modificar(this.value)" step="5" type="range" value="0"/>
+                    </td>
+                    <td>
+                        <span id="valor">
+                        </span>
+                    </td>
+                    <th>
+                        50 m
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <p>
+                            Velocidad Ascensor
+                        </p>
+                    </th>
+                    <td>
+                       {{form.velocidad_Cabina}}
+                    </td>
+                    <td>
+                      velocidad de cabina  
+                    </td>
+                    <th>
+                        {{velocidad_P}}
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <p>
+                            Cantidad de pisos
+                        </p>
+                    </th>
+                    <td>
+                       {{form.recorrido_Cabina}}
+                    </td>
+                    <td>
+                        Carga maxima:
+                    </td>
+                    <th>
+                        {{presion_Embolo}}
+                    </th>
+                </tr>
+                
+            </table>
+
+            {{form.usuario}}
+            <br>
+            <div align="center" class="col-12">
+            <button type="submit" class="btn btn-info btn-lg btn-responsive" id="btnsimular" name="btnsimular" />
+            <span class="glyphicon glyphicon"></span> Mostrar Simulacion</button>
+            <br>
+            <br>
+            <div align="center" class="col-12">
+            <button type="submit" class="btn btn-info btn-lg btn-responsive" id="btnmodificar" name="btnmodificar" />
+            <span class="glyphicon glyphicon"></span> Modificar Simulacion</button>
+
+        </div>
+        </div>
+    </div>
+    </form>
+</div>
+<div class="jumbotron">
     <form method="post">
         {% csrf_token %}
     <legend>
@@ -145,93 +234,10 @@
                 </tr>
             </table>
         </div>
-        <div class="col-sm-7">
-            <legend>
-                Simulacion Nueva
-            </legend>
-            <table class="table table-hover row-md-3">
-                <tr class="table-success">
-                    <th scope="row">
-                        Datos
-                    </th>
-                    <td>
-                        Modificacion
-                    </td>
-                    <td>
-                        Nuevo Valor
-                    </td>
-                    <td>
-                        Resultados
-                    </td>
-                </tr>
-                <tr>
-                    <th>
-                        <p>
-                            Area piston
-                        </p>
-                    </th>
-                    <td>
-                        <input id="rango" max="200" min="0" onchange="modificar(this.value)" step="5" type="range" value="0"/>
-                    </td>
-                    <td>
-                        <span id="valor">
-                        </span>
-                    </td>
-                    <th>
-                        50 m
-                    </th>
-                </tr>
-                <tr>
-                    <th>
-                        <p>
-                            Velocidad Ascensor
-                        </p>
-                    </th>
-                    <td>
-                       {{form.velocidad_Cabina}}
-                    </td>
-                    <td>
-                      velocidad de cabina  
-                    </td>
-                    <th>
-                        {{velocidad_P}}
-                    </th>
-                </tr>
-                <tr>
-                    <th>
-                        <p>
-                            Cantidad de pisos
-                        </p>
-                    </th>
-                    <td>
-                       {{form.recorrido_Cabina}}
-                    </td>
-                    <td>
-                        Carga maxima:
-                    </td>
-                    <th>
-                        {{presion_Embolo}}
-                    </th>
-                </tr>
-                
-            </table>
-
-            {{form.usuario}}
-            <br>
-            <div align="center" class="col-12">
-            <button type="submit" class="btn btn-info btn-lg btn-responsive" id="btnsimular" name="btnsimular" />
-            <span class="glyphicon glyphicon"></span> Mostrar Simulacion</button>
-            <br>
-            <br>
-            <div align="center" class="col-12">
-            <button type="submit" class="btn btn-info btn-lg btn-responsive" id="btnmodificar" name="btnmodificar" />
-            <span class="glyphicon glyphicon"></span> Modificar Simulacion</button>
-
-        </div>
-        </div>
-    </div>
+       
     </form>
 </div>
+
 <!--Script que tiene la funcion para obetener lo valores de la modificacion"-->
 <script src="{% static 'js/funcionModificacion.js' %}" type="text/javascript">
 </script>

@@ -9,10 +9,27 @@ function habilitar(){
     var c8=document.getElementById("8");
 
     var btn=document.getElementById("btnsimular");
+    var btng=document.getElementById("btnguardar");
 
     if(c1.value!= "" && c2.value!= "" && c3.value!="" && c4.value!="" && c5.value!="" && c6.value!="" && c7.value!="" && c8.value!=""){
         btn.disabled=false;
     }else{
         btn.disabled=true;
     }
+
+    if(btn.disabled==false){
+        btng.disabled=false;
+    }else{
+        btng.disabled=true;
+    }
+}
+function h(){
+    var a=document.getElementById("btnsimular");
+    a.disabled=false;
+}
+
+
+
+function mensaje(){
+    alert('Se guardo Exitosamente');
 }
