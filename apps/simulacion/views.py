@@ -46,7 +46,7 @@ def simulador_view(request):
 		if 'btnsimular' in request.POST:
 			
 			form = SimulacionForm(request.POST)
-			
+
 			datoCable = CableDeSuspension.objects.all()
 			dato_Piston = Piston.objects.all()
 			dato_Polea = Polea.objects.all()
@@ -106,14 +106,15 @@ def simulador_view(request):
 					break
 
 			form = SimulacionForm(request.POST)
-		
+
 		if 	'btnguardar' in request.POST:
 			form = SimulacionForm(request.POST)
 
 			if form.is_valid():
 				form.save()
+	
 	else:
 		form = SimulacionForm()
-
-
+	
 	return render(request, 'simulacion/index_simulacion.html' , {'aceite': round(aceite_Circulacion,2)	,'carga':round(carga_Maxima,2),'peso_Polea': round(peso_Polea,2) ,'caudal_Bomba':round(caudal_Bomba,2),'form':form, 'coeficiente':round(coeficiente_Seg,2),'pis':round(presion_Embolo,2),'carga_Piston':round(carga_Piston,2), 'velocidad_P': round(velocidad_P,2), 'diametro_Polea':round(diametro_Polea,2)})
+	

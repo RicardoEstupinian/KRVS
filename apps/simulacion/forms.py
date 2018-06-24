@@ -73,18 +73,18 @@ class SimulacionForm(forms.ModelForm):
 		# forms.select porque es una llave foranea
 
 		widgets = {
-			'numero_Cables': forms.TextInput(attrs={'class': 'form-control', 'placeholder':"Cables",'onkeypress':"return validar(event)",'id':"1",'onkeyup':"habilitar()"}),
-			'carga_Nominal': forms.TextInput(attrs={'class': 'form-control', 'placeholder':"Peso",'onkeypress':"return validar(event)"}),
+			'numero_Cables': forms.TextInput(attrs={'class': 'form-control', 'placeholder':"Cables",'onkeypress':"return validar(event)",'id':"1",'onkeyup':"habilitar()",'onpaste':"return false"}),
+			'carga_Nominal': forms.TextInput(attrs={'class': 'form-control', 'placeholder':"Peso",'onkeypress':"return validar(event)",'id':"9",'onkeyup':"habilitar()",'onpaste':"return false"}),
 			'recorrido_Cabina': forms.Select(attrs={'class': 'form-control'},choices=pisos),
-			'recorido_Superior_Piston': forms.TextInput(attrs={'class': 'form-control', 'placeholder':"Recorrido Piston",'onkeypress':"return validar(event)",'id':"2",'onkeyup':"habilitar()"}),
-			'cantidad_Pistones': forms.TextInput(attrs={'class': 'form-control', 'placeholder':"Pistones",'onkeypress':"return validar(event)",'id':"3",'onkeyup':"habilitar()"}),
-			'cantidad_Cilindros': forms.TextInput(attrs={'class': 'form-control', 'placeholder':"Cilindros",'onkeypress':"return validar(event)",'id':"4",'onkeyup':"habilitar()"}),
+			'recorido_Superior_Piston': forms.TextInput(attrs={'class': 'form-control', 'placeholder':"Recorrido Piston",'onkeypress':"return validar(event)",'id':"2",'onkeyup':"habilitar()",'onpaste':"return false"}),
+			'cantidad_Pistones': forms.TextInput(attrs={'class': 'form-control', 'placeholder':"Pistones",'onkeypress':"return validar(event)",'id':"3",'onkeyup':"habilitar()",'onpaste':"return false"}),
+			'cantidad_Cilindros': forms.TextInput(attrs={'class': 'form-control', 'placeholder':"Cilindros",'onkeypress':"return validar(event)",'id':"4",'onkeyup':"habilitar()",'onpaste':"return false"}),
 			'numero_Expanciones': forms.Select(attrs={'class': 'form-control'},choices=expanciones),
-			'diametro_Cable': forms.TextInput(attrs={'class': 'form-control', 'placeholder':"Diametro Del Cable",'onkeypress':"return validar(event)",'id':"5",'onkeyup':"habilitar()"}),
+			'diametro_Cable': forms.TextInput(attrs={'class': 'form-control', 'placeholder':"Diametro Del Cable",'onkeypress':"return validar(event)",'id':"5",'onkeyup':"habilitar()",'onpaste':"return false"}),
 			'velocidad_Cabina': forms.Select(attrs={'class': 'form-control'},choices= velocidades),
-			'peso_Ascensor': forms.TextInput(attrs={'class': 'form-control', 'placeholder':"Peso",'onkeypress':"return validar(event)",'id':"6",'onkeyup':"habilitar()"}),
-			'diametro_Piston': forms.TextInput(attrs={'class': 'form-control', 'placeholder':"Diametro",'onkeypress':"return validar(event)",'id':"7",'onkeyup':"habilitar()"}),
-			'masa_Embolo': forms.TextInput(attrs={'class': 'form-control', 'placeholder':"Masa Embolo",'onkeypress':"return validar(event)",'id':"8",'onkeyup':"habilitar()"}),
+			'peso_Ascensor': forms.TextInput(attrs={'class': 'form-control', 'placeholder':"Peso",'onkeypress':"return validar(event)",'id':"6",'onkeyup':"habilitar()",'onpaste':"return false"}),
+			'diametro_Piston': forms.TextInput(attrs={'class': 'form-control', 'placeholder':"Diametro",'onkeypress':"return validar(event)",'id':"7",'onkeyup':"habilitar()",'onpaste':"return false"}),
+			'masa_Embolo': forms.TextInput(attrs={'class': 'form-control', 'placeholder':"Masa Embolo",'onkeypress':"return validar(event)",'id':"8",'onkeyup':"habilitar()",'onpaste':"return false"}),
 
 			
 		}
