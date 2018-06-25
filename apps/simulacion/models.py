@@ -5,7 +5,7 @@ from apps.log.models import Usuario
 
 # Create your models here.
 class Simulador(models.Model):
-	numero_Cables = models.FloatField(null=False)
+	numero_Cables = models.DecimalField(max_digits=4, decimal_places=2, default=0.00)
 	carga_Nominal = models.FloatField(null=False)
 	recorrido_Cabina =  models.FloatField(null=False)
 	recorido_Superior_Piston  = models.FloatField(null=False)
