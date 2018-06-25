@@ -1,8 +1,10 @@
 {% extends 'base/base.html' %} {% load staticfiles %} {% block body %} {%block extrahead%}
 <!--Se llama el estilo del tema darkly en bootstrap-->
 
-<link href="{% static 'css/darkly.min.css' %}" rel="stylesheet" type="text/css" /> {%endblock%}
-
+<link href="{% static 'css/darkly.min.css' %}" rel="stylesheet" type="text/css" /> 
+<link href="{% static 'css/alertify.min.css' %}" rel="stylesheet" type="text/css" />
+<link href="{% static 'css/themes/default.min.css' %}" rel="stylesheet" type="text/css" />
+{%endblock%}
 <!--Es un contenedor donde se encuentra el formulario y las tablas de resultados-->
 <div class="jumbotron">
     <form method="post">
@@ -235,9 +237,7 @@
                 <div align="center" class="col-12">
                     <button type="submit" class="btn btn-info btn-lg btn-responsive" id="btnsimular" name="btnsimular" onmouseover="habilitar()" />
                     <span class="glyphicon glyphicon"></span> Simular</button>
-                   
                 </div>
-                <button type="button" id="val" hidden onclick="h()"></button>
             </div>
             <div class="col-sm-4">
                 <div align="center" class="col-12">
@@ -247,7 +247,9 @@
             </div>
             <div class="col-sm-4">
                 <div align="center" class="col-10">
-                    <button type="submit" class="btn btn-info btn-lg btn-responsive" id="btnguardar" name="btnguardar"  onclick="mensaje()" onmouseover="habilitar()"/>
+                    <button type="submit" class="btn btn-info btn-lg btn-responsive" id="btnguardar" name="btnguardar"  hidden="true"/>
+                    <span class="glyphicon glyphicon"></span> Guardar</button>
+                    <button type="button" class="btn btn-info btn-lg btn-responsive" id="btng" onclick="mensaje()" onmouseover="habilitar()"/>
                     <span class="glyphicon glyphicon"></span> Guardar</button>
                 </div>
             </div>
@@ -373,9 +375,13 @@
 </div>
 
 </table>
+
+<script src="{% static 'js/alertify.min.js' %}" type="text/javascript">
+</script>
 <script src="{% static 'js/validacion.js' %}">
 </script>
 <script src="{% static 'js/validacion_vacios.js' %}">
 </script>
 <script src="{% static 'js/jquery-3.3.1.min.js' %}" type="text/javascript">
-</script> {% endblock %}
+</script>
+ {% endblock %}

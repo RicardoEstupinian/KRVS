@@ -10,7 +10,7 @@ function habilitar(){
     var c9=document.getElementById("9");
 
     var btn=document.getElementById("btnsimular");
-    var btng=document.getElementById("btnguardar");
+    var btng=document.getElementById("btng");
 
     if(c1.value!= "" && c2.value!= "" && c3.value!="" && c4.value!="" && c5.value!="" && c6.value!="" && c7.value!="" && c8.value!=""&& c9.value!=""){
         btn.disabled=false;
@@ -27,7 +27,7 @@ function habilitar(){
 
 function eliminar(){
     var b=document.getElementById("btnsimular");
-    var bt=document.getElementById("btnguardar");
+    var bt=document.getElementById("btng");
     b.disabled=true;
     bt.disabled=true;
 
@@ -53,5 +53,6 @@ function eliminar(){
 }
 
 function mensaje(){
-    alert('Se guardo Exitosamente');
+    alertify.alert('Guardar', 'Se ha guardado Exitosamente', function(){
+        document.getElementById("btnguardar").click();});
 }
