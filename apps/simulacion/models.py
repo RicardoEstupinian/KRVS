@@ -1,7 +1,5 @@
 from django.db import models
-
-# Create your models here.
-from apps.log.models import Usuario
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Simulador(models.Model):
@@ -17,7 +15,7 @@ class Simulador(models.Model):
 	peso_Ascensor = models.FloatField(null=True)
 	diametro_Piston = models.FloatField(null=True)
 	masa_Embolo = models.FloatField(null=True)	
-	usuario = models.ForeignKey(Usuario, null=True, blank=True, on_delete= models.CASCADE)
+	usuario = models.ForeignKey(User, null=False, blank=True, on_delete= models.CASCADE)
 	
 class Piston(models.Model):
 	masa_Lineal_Vastago = models.FloatField(null=True)

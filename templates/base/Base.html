@@ -1,82 +1,93 @@
 {% load staticfiles %}
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-            <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" name="viewport">
-                <title>
-                    {%block title%} KRVS Simulator {%endblock%}
-                </title>
-                {%block extrahead%}{%endblock%}
-                <!--Agregando icono al title-->
-                <link href="{% static 'imagenes/KRVS_icono.ico' %}" rel="Shortcut Icon" type="image/x-icon"/>
-                <!--Agregando estilo personalizado utilizado para el menu de navegacion-->
-                <link href="{% static 'css/estilo.css' %}" rel="stylesheet" type="text/css"/>
-                <!--Agregando los iconos y sus respectivos estilos-->
-                <link href="{%static 'css/fonts.css' %}" rel="stylesheet" type="text/css"/>
-                <!--Agregando estilo Bootstrap-->
-                <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css"/>
-            </meta>
-        </meta>
-    </head>
-    <body class="bg-light">
-        <header>
-            <nav>
-                <ul>
-                    <li>
-                        <a href="{% url 'inicio:inicio' %}">
-                            <span class="uno">
-                                <i class="icon icon-home">
-                                </i>
-                            </span>
-                            <b>
-                                Inicio
-                            </b>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="formato" href="{% url 'simulacion:simulacion' %}">
-                            <span class="dos">
-                                <i class="icon icon-hammer">
-                                </i>
-                            </span>
-                            <b>
-                                Simulador de Especificaciones
-                            </b>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{% url 'modificacion:modificacion' %}">
-                            <span class="tres">
-                                <i class="icon icon-wrench">
-                                </i>
-                            </span>
-                            <b>
-                                Modificacion de Simulacion
-                            </b>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{% url 'informacion:informacion' %}">
-                            <span class="cuatro">
-                                <i class="icon icon-notification">
-                                </i>
-                            </span>
-                            <b>
-                                Informacion
-                            </b>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
-        {% block body%}
-        
-        {% endblock %}
-        <!--Script necesario para bootstrap-->
-        <script src="{% static 'js/bootstrap.min.js' %}" type="text/javascript">
-        </script>
-        <script src="{% static 'js/jquery-3.3.1.min.js' %}" type="text/javascript">
-        </script>
-    </body>
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" name="viewport">
+    <title>
+        {%block title%} KRVS Simulator {%endblock%}
+    </title>
+    {%block extrahead%}{%endblock%}
+    <!--Agregando icono al title-->
+    <link href="{% static 'imagenes/KRVS_icono.ico' %}" rel="Shortcut Icon" type="image/x-icon" />
+    <!--Agregando estilo personalizado utilizado para el menu de navegacion-->
+    <link href="{% static 'css/estilo.css' %}" rel="stylesheet" type="text/css" />
+    <!--Agregando los iconos y sus respectivos estilos-->
+    <link href="{%static 'css/fonts.css' %}" rel="stylesheet" type="text/css" />
+    <!--Agregando estilo Bootstrap-->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" />
+    </meta>
+    </meta>
+</head>
+
+<body class="bg-light">
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="{% url 'inicio:inicio' %}">
+                        <span class="uno">
+                            <i class="icon icon-home">
+                            </i>
+                        </span>
+                        <b>
+                            Inicio
+                        </b>
+                    </a>
+                </li>
+                <li>
+                    <a class="formato" href="{% url 'simulacion:simulacion' %}">
+                        <span class="dos">
+                            <i class="icon icon-hammer">
+                            </i>
+                        </span>
+                        <b>
+                            Simulador de Especificaciones
+                        </b>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'modificacion:modificacion' %}">
+                        <span class="tres">
+                            <i class="icon icon-wrench">
+                            </i>
+                        </span>
+                        <b>
+                            Modificacion de Simulacion
+                        </b>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'informacion:informacion' %}">
+                        <span class="cuatro">
+                            <i class="icon icon-notification">
+                            </i>
+                        </span>
+                        <b>
+                            Informacion
+                        </b>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'logout' %}">
+                        <span background="white" class="cinco">
+
+                        </span>
+                        <b>
+                            Salir
+                        </b>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    {% block body%} {% endblock %}
+    <!--Script necesario para bootstrap-->
+    <script src="{% static 'js/bootstrap.min.js' %}" type="text/javascript">
+    </script>
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}" type="text/javascript">
+    </script>
+</body>
+
 </html>
