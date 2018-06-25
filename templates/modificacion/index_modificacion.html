@@ -4,6 +4,7 @@
 {%endblock%}
 <div class="jumbotron">
     <form method="POST">
+        {% csrf_token %}
         <div class="col-sm-12">
             <legend>
                 Simulacion Nueva
@@ -21,6 +22,9 @@
                     </td>
                     <td>
                         Resultados
+                    </td>
+                    <td>
+                        Unidad de medida
                     </td>
                 </tr>
                 <tr>
@@ -55,31 +59,218 @@
                     <th>
                         {{velocidad_P}}
                     </th>
+                    <th>
+                        m/s
+                    </th>
                 </tr>
                 <tr>
                     <th>
                         <p>
-                            Cantidad de pisos
+                            Cantidad de cables
+                        </p>
+                    </th>
+                    <td>
+                       {{form.numero_Cables}}
+                    </td>
+                    <td>
+                        Coeficiente seguridad
+                    </td>
+                    <th>
+                        {{coeficiente_Seg}}
+                    </th>
+                    <th>
+                        unidades
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <p>
+                            Carga nominal
+                        </p>
+                    </th>
+                    <td>
+                       {{form.carga_Nominal}}
+                    </td>
+                    <td>
+                        Presion del piston
+                    </td>
+                    <th>
+                        {{presion_Embolo}}
+                    </th>
+                    <th>
+                        kg
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <p>
+                           Cantidad de pisos
                         </p>
                     </th>
                     <td>
                        {{form.recorrido_Cabina}}
                     </td>
                     <td>
-                        Carga maxima:
+                        Carga del piston
                     </td>
                     <th>
-                        {{presion_Embolo}}
+                        {{carga_Piston}}
+                    </th>
+                    <th>
+                        unidades
                     </th>
                 </tr>
-                
+                <tr>
+                    <th>
+                        <p>
+                          Recorido superior del piston
+                        </p>
+                    </th>
+                    <td>
+                       {{Recorrido_Superior_Piston}}
+                    </td>
+                    <td>
+                        Carga Maxima
+                    </td>
+                    <th>
+                        {{carga_Maxima}}
+                    </th>
+                    <th>
+                        metros
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <p>
+                          Cantidad de pistones
+                        </p>
+                    </th>
+                    <td>
+                       {{cantidad_Pistones}}
+                    </td>
+                    <td>
+                        Aceite en circulacion
+                    </td>
+                    <th>
+                        {{aceite_Circulacion}}
+                    </th>
+                    <th>
+                        unidades
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <p>
+                          Cantidad de cilindros
+                        </p>
+                    </th>
+                    <td>
+                       {{cantidad_Cilindros}}
+                    </td>
+                    <td>
+                        Caudal de bomba
+                    </td>
+                    <th>
+                        {{caudal_Bomba}}
+                    </th>
+                    <th>
+                        unidades
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <p>
+                          Cantidad de Expanciones
+                        </p>
+                    </th>
+                    <td>
+                       {{numero_Expanciones}}
+                    </td>
+                    <td>
+                        Diametro polea
+                    </td>
+                    <th>
+                        {{diametro_Polea}}
+                    </th>
+                    <th>
+                        mm
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <p>
+                          diametro del cable
+                        </p>
+                    </th>
+                    <td>
+                       {{diametro_Cable}}
+                    </td>
+                    <td>
+                        peso de polea
+                    </td>
+                    <th>
+                        {{peso_Polea}}
+                    </th>
+                    <th>
+                        kg
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <p>
+                          Peso del ascensor
+                        </p>
+                    </th>
+                    <td>
+                       {{peso_Ascensor}}
+                    </td>
+                    <td>
+                        diametro polea
+                    </td>
+                    <th>
+                        {{diametro_Polea}}
+                    </th>
+                    {{mm}}
+                </tr>
+                <tr>
+                    <th>
+                        <p>
+                          Diametro del piston
+                        </p>
+                    </th>
+                    <td>
+                       {{diametro_Piston}}
+                    </td>
+                    <td>
+                        
+                    </td>
+                    <th>
+                        
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <p>
+                          Masa embolo
+                        </p>
+                    </th>
+                    <td>
+                       {{masa_Embolo}}
+                    </td>
+                    <td>
+                        
+                    </td>
+                    <th>
+                        
+                    </th>
+                </tr>
             </table>
 
             {{form.usuario}}
             <br>
             <div align="center" class="col-12">
             <button type="submit" class="btn btn-info btn-lg btn-responsive" id="btnsimular" name="btnsimular" />
-            <span class="glyphicon glyphicon"></span> Mostrar Simulacion</button>
+            <span class="glyphicon glyphicon"></span> Modificar Simulacion</button>
             <br>
             <br>
             <div align="center" class="col-12">

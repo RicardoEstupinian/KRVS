@@ -3,13 +3,26 @@ from apps.simulacion.models import Simulador
 
 
 velocidades= (
-		('1',0.15),
-		('2',0.30),
-		('3',0.45),
-		('4',0.60),
-		('5',0.75),
-		('6',0.90),
-		('7',1),
+		('0.15',0.15),
+		('0.30',0.30),
+		('0.45',0.45),
+		('0.60',0.60),
+		('0.75',0.75),
+		('0.90',0.90),
+		('1',1),
+	)
+
+cantidad = (
+		('1',1),
+		('2',2),
+		('3',3),
+		('4',4),
+		('5',5),
+		('6',6),
+		('7',7),
+		('8',8),
+		('9',9),
+		('10',10),		
 	)
 
 pisos= (
@@ -72,8 +85,8 @@ class ModificacionForm(forms.ModelForm):
 		# forms.select porque es una llave foranea
 
 		widgets = {
-			'numero_Cables': forms.TextInput(attrs={'class': 'form-control', 'placeholder':"cables"}),
-			'carga_Nominal': forms.TextInput(attrs={'class': 'form-control', 'placeholder':"peso"}),
+			'numero_Cables': forms.Select(attrs={'class': 'form-control', 'placeholder':"cables"}, choices	= cantidad	),
+			'carga_Nominal': forms.NumberInput(attrs={'class': 'form-control', 'placeholder':"Peso",'onkeypress':"return validar(event)",'id':"9",'onkeyup':"habilitar()",'onpaste':"return false"}),
 			'recorrido_Cabina': forms.Select(attrs={'class': 'form-control'},choices=pisos),
 			'recorido_Superior_Piston': forms.TextInput(attrs={'class': 'form-control', 'placeholder':"recorrido piston"}),
 			'cantidad_Pistones': forms.TextInput(attrs={'class': 'form-control', 'placeholder':"Pistones"}),
