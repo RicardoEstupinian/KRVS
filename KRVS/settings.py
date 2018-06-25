@@ -84,7 +84,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'KRVS',
         'USER': 'postgres',
-        'PASSWORD' : 'ues',
+        'PASSWORD' : 'dna',
         'HOST' : 'localhost',
         'PORT': 5432,
 
