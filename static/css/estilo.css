@@ -74,6 +74,7 @@ nav > ul> li a:hover > span{
 .cuatro{
 	background: #0CADCA;
 }
+
 nav ul li a  i{
 	color: aliceblue;
 }
@@ -84,4 +85,13 @@ nav > ul> li a:hover{
 }
 #letranegra{
 	color: black;
+}
+.cinco{
+	background: rgb(112, 70, 228);
+}
+
+nav > ul> li a:hover > .cinco{
+	background: rgb(112, 70, 228);
+	transition: none;
+	top: -55px;
 }
