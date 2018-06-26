@@ -40,16 +40,22 @@ function eliminar(){
     var c7=document.getElementById("7");
     var c8=document.getElementById("8");
     var c9=document.getElementById("9");
+    var c10=document.getElementById("10");
+    var c11=document.getElementById("11");
+    var c12=document.getElementById("12");
 
-    c1.value="";
+    c1.value="1";
     c2.value="";
-    c3.value="";
-    c4.value="";
+    c3.value="1";
+    c4.value="1";
     c5.value="";
     c6.value="";
     c7.value="";
     c8.value="";
     c9.value="";
+    c10.value="1";
+    c11.value="1";
+    c12.value="1";
 }
 
 function mensaje(){

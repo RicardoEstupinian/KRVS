@@ -63,7 +63,6 @@ class ModificacionForm(forms.ModelForm):
 			'diametro_Piston',
 			'masa_Embolo',			
 			'usuario',
-		
 		]
 
 		labels = {
@@ -79,7 +78,7 @@ class ModificacionForm(forms.ModelForm):
 			'peso_Ascensor': 'Peso del ascensor',
 			'diametro_Piston': 'Diametro del piston',
 			'masa_Embolo': 'Masa del embolo',
-			'usuario': 'Usuario',	
+			'usuario': 'Usuario',
 		}
 
 		# forms.select porque es una llave foranea
@@ -97,7 +96,5 @@ class ModificacionForm(forms.ModelForm):
 			'peso_Ascensor': forms.TextInput(attrs={'class': 'form-control', 'placeholder':"peso"}),
 			'diametro_Piston': forms.TextInput(attrs={'class': 'form-control', 'placeholder':"diametro"}),
 			'masa_Embolo': forms.TextInput(attrs={'class': 'form-control', 'placeholder':"masa embolo"}),
-			'usuario': forms.TextInput(attrs={'class': 'form-control', 'placeholder':"Ingrese el id de la simulacion"}),
-
-			
+			'usuario':forms.TextInput(attrs={'class': 'form-control','placeholder':"Ingrese Id de Simulacion"}),
 		}
