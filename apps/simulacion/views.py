@@ -2,8 +2,10 @@ from django.shortcuts import render
 # Create your views here.
 from django.http import HttpResponse
 from apps.simulacion.forms import SimulacionForm
-from apps.simulacion.models import CableDeSuspension , Piston , Polea , Acero, TipoPiston
+from apps.simulacion.models import CableDeSuspension , Piston , Polea , Acero, TipoPiston,Simulador
 from django.shortcuts import redirect
+
+from django.contrib.auth.models import User
 
 
 
@@ -40,9 +42,11 @@ def simulador_view(request):
 	traccion = 0
 	momento_Incercia = 0
 	aceite_Circulacion = 0
-
+	id_prueba = request.user.id
 
 	if request.method == 'POST':
+		
+
 		if 'btnsimular' in request.POST:
 			
 			form = SimulacionForm(request.POST)
@@ -71,12 +75,11 @@ def simulador_view(request):
 
 			recorrido_Total_Piston = float(recorrido_Cabina)*2.5 + float(sobre_Superior_Piston )
 
-			
-			
 
 			for polea in dato_Polea:
-				if polea.diametro == diametro_Polea:
+				if polea.diametro >= diametro_Polea:
 					peso_Polea = polea.peso
+					break
 
 			for cable in datoCable:
 				if coeficiente_Seg	< 12:
@@ -116,5 +119,5 @@ def simulador_view(request):
 	else:
 		form = SimulacionForm()
 	
-	return render(request, 'simulacion/index_simulacion.html' , {'aceite': round(aceite_Circulacion,2)	,'carga':round(carga_Maxima,2),'peso_Polea': round(peso_Polea,2) ,'caudal_Bomba':round(caudal_Bomba,2),'form':form, 'coeficiente':round(coeficiente_Seg,2),'pis':round(presion_Embolo,2),'carga_Piston':round(carga_Piston,2), 'velocidad_P': round(velocidad_P,2), 'diametro_Polea':round(diametro_Polea,2)})
+	return render(request, 'simulacion/index_simulacion.html' , {'id_prueba':id_prueba,'aceite': round(aceite_Circulacion,2),'carga':round(carga_Maxima,2),'peso_Polea': round(peso_Polea,2) ,'caudal_Bomba':round(caudal_Bomba,2),'form':form, 'coeficiente':round(coeficiente_Seg,2),'pis':round(presion_Embolo,2),'carga_Piston':round(carga_Piston,2), 'velocidad_P': round(velocidad_P,2), 'diametro_Polea':round(diametro_Polea,2)})
 	
