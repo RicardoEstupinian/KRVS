@@ -3,15 +3,15 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 class Simulador(models.Model):
-	numero_Cables = models.FloatField(null=False)
-	carga_Nominal = models.FloatField(null=False)
+	numero_Cables = models.FloatField(null=True)
+	carga_Nominal = models.FloatField(null=True)
 	recorrido_Cabina =  models.FloatField(null=False)
-	recorido_Superior_Piston  = models.FloatField(null=False)
-	cantidad_Pistones = models.IntegerField(null=False)
-	cantidad_Cilindros = models.IntegerField(null=False)
-	numero_Expanciones = models.IntegerField(null=False)
-	velocidad_Cabina = models.FloatField(null=False)
-	diametro_Cable = models.FloatField(null=False)
+	recorido_Superior_Piston  = models.FloatField(null=True)
+	cantidad_Pistones = models.IntegerField(null=True)
+	cantidad_Cilindros = models.IntegerField(null=True)
+	numero_Expanciones = models.IntegerField(null=True)
+	velocidad_Cabina = models.FloatField(null=True)
+	diametro_Cable = models.FloatField(null=True)
 	peso_Ascensor = models.FloatField(null=True)
 	diametro_Piston = models.FloatField(null=True)
 	masa_Embolo = models.FloatField(null=True)	

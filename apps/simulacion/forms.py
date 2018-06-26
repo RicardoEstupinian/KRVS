@@ -48,6 +48,7 @@ class SimulacionForm(forms.ModelForm):
 
 	class Meta:
 		model = Simulador
+
 		INTEGER_CHOICES= (0.15,0.30,0.45,0.60,0.75,0.90,1)
 
 		fields = [
@@ -98,6 +99,5 @@ class SimulacionForm(forms.ModelForm):
 			'peso_Ascensor': forms.NumberInput(attrs={'class': 'form-control', 'placeholder':"Peso",'onkeypress':"return validar(event)",'id':"6",'onkeyup':"habilitar()",'onpaste':"return false"}),
 			'diametro_Piston': forms.NumberInput(attrs={'class': 'form-control', 'placeholder':"Diametro",'onkeypress':"return validar(event)",'id':"7",'onkeyup':"habilitar()",'onpaste':"return false"}),
 			'masa_Embolo': forms.NumberInput(attrs={'class': 'form-control', 'placeholder':"Masa Embolo",'onkeypress':"return validar(event)",'id':"8",'onkeyup':"habilitar()",'onpaste':"return false"}),
-
-			
+			'usuario':forms.TextInput(attrs={'class':'form-control','id':"u2", 'placeholder':"Masa Embolo",'hidden':'True'}),
 		}
