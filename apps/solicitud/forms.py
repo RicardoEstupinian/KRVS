@@ -86,7 +86,7 @@ class ModificacionForm(forms.ModelForm):
 
 		widgets = {
 			'numero_Cables': forms.Select(attrs={'class': 'form-control', 'placeholder':"cables"}, choices	= cantidad	),
-			'carga_Nominal': forms.NumberInput(attrs={'class': 'form-control', 'placeholder':"Peso",'onkeypress':"return validar(event)",'id':"9",'onkeyup':"habilitar()",'onpaste':"return false"}),
+			'carga_Nominal': forms.NumberInput(attrs={'class': 'form-control', 'placeholder':"Peso",'onkeypress':"return validar(event)",'id':"9",'onkeyup':"habilitar()",'onpaste':"return false", 'min':"0",'max':"1000"}),
 			'recorrido_Cabina': forms.Select(attrs={'class': 'form-control'},choices=pisos),
 			'recorido_Superior_Piston': forms.TextInput(attrs={'class': 'form-control', 'placeholder':"recorrido piston"}),
 			'cantidad_Pistones': forms.TextInput(attrs={'class': 'form-control', 'placeholder':"Pistones"}),

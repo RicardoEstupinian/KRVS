@@ -44,14 +44,7 @@ def modificacion(request):
 			dato_Polea = Polea.objects.all()
 			dato_Acero = Acero.objects.all()
 			dato_Tipo = TipoPiston.objects.all()
-			"""if request.method	== 'GET':
-				form = ModificacionForm(instance=datoSimulacion)
-			else:
-				form = ModificacionForm(request.POST)
-				if form.is_valid():
-					form.save()"""
-
-
+			
 
 			for dato in datoSimulacion:
 				if int(dato.id) == int(idS):				
@@ -88,7 +81,7 @@ def modificacion(request):
 					velocidad_P = float(velocidad_C)/2
 					carga_Piston =1.4*9.8*(((float(carga_Nominal)+float(peso_Ascensor))/float(cantidad_Cilindros)) + 0.64*float(masa_Embolo))
 
-
+					diametro_Polea = 40*(float(diametro_Cable))
 					for polea in dato_Polea:
 						if polea.diametro == diametro_Polea:
 							peso_Polea = polea.peso
@@ -100,38 +93,31 @@ def modificacion(request):
 							aceite_Circulacion	= lamda.aceite * recorrido_Total_Piston
 							break
 					caudal_Bomba = float(velocidad_C)*(((5*6*3.1416)*((float(diametro_Piston)/100)*(float(diametro_Piston)/100)))/4)		
-					diametro_Polea = 40*(float(diametro_Cable))
+		
 
 			form = ModificacionForm(request.POST)		
+		
+
 		if 'btnmodificar' in request.POST:
-			"""numero_C = request.POST.get('numero_Cables')
-			carga_N = request.POST.get('carga_Nominal')
-			peso_Ascens = request.POST.get('peso_Ascensor')
-			recorrido_Cabina =(request.POST.get('recorrido_Cabina'))
-			sobre_Superior_Piston = request.POST.get('recorido_Superior_Piston')
-			diametro_P = request.POST.get('diametro_Piston')
-			cantidad_P = request.POST.get('cantidad_Pistones')
-			masa_E = request.POST.get('masa_Embolo')
-			cantidad_C = request.POST.get('cantidad_Cilindros')
-			velocidad_C = request.POST.get('velocidad_Cabina')
-			diametro_C = request.POST.get('diametro_Cable')
-			"""	
-			velocidad_C = request.POST.get('velocidad_Cabina')	
-			form = ModificacionForm(request.POST)
-
-			if form.is_valid():
-				form.save()	
-
 			
+			modific = Simulador.objects.get(id='135')			
+			if request.method == 'GET':
+				form = ModificacionForm(instance= modific)
+			else:
+					
+				
+				if form.is_valid():
+					form.save()
+				else:
+					form = ModificacionForm()
 
-		else:
-			form = ModificacionForm()	
+
+		
 	else:
 		form = ModificacionForm()
 
 			
 
-#			diametro_C = request.POST.get('diametro_Cable')
 
 
 
