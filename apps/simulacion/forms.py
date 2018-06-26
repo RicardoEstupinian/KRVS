@@ -102,18 +102,11 @@ class SimulacionForm(forms.ModelForm):
 			'cantidad_Pistones': forms.Select(attrs={'class': 'form-control', 'placeholder':"Pistones",'onkeypress':"return validar(event)",'id':"3",'onkeyup':"habilitar()",'onpaste':"return false"}, choices=cantidad_P),
 			'cantidad_Cilindros': forms.Select(attrs={'class': 'form-control', 'placeholder':"Cilindros",'onkeypress':"return validar(event)",'id':"4",'onkeyup':"habilitar()",'onpaste':"return false"},choices=cantidad_P),
 			'numero_Expanciones': forms.Select(attrs={'class': 'form-control'},choices=expanciones),
-			'diametro_Cable': forms.NumberInput(attrs={'class': 'form-control', 'placeholder':"Diametro Del Cable",'onkeypress':"return validar(event)",'id':"5",'onkeyup':"habilitar()",'onpaste':"return false",'min':"8"}),
+			'diametro_Cable': forms.NumberInput(attrs={'class': 'form-control', 'placeholder':"Diametro Del Cable",'onkeypress':"return validar(event)",'id':"5",'onkeyup':"habilitar()",'onpaste':"return false",'min':"8", 'max':"13"}),
 			'velocidad_Cabina': forms.Select(attrs={'class': 'form-control'},choices= velocidades),
-<<<<<<< HEAD
 			'peso_Ascensor': forms.NumberInput(attrs={'class': 'form-control', 'placeholder':"Peso",'onkeypress':"return validar(event)",'id':"6",'onkeyup':"habilitar()",'onpaste':"return false",'min':"0"}),
 			'diametro_Piston': forms.NumberInput(attrs={'class': 'form-control', 'placeholder':"Diametro",'onkeypress':"return validar(event)",'id':"7",'onkeyup':"habilitar()",'onpaste':"return false",'min':"0"}),
 			'masa_Embolo': forms.NumberInput(attrs={'class': 'form-control', 'placeholder':"Masa Embolo",'onkeypress':"return validar(event)",'id':"8",'onkeyup':"habilitar()",'onpaste':"return false",'min':"0"}),
-
-			
-=======
-			'peso_Ascensor': forms.NumberInput(attrs={'class': 'form-control', 'placeholder':"Peso",'onkeypress':"return validar(event)",'id':"6",'onkeyup':"habilitar()",'onpaste':"return false"}),
-			'diametro_Piston': forms.NumberInput(attrs={'class': 'form-control', 'placeholder':"Diametro",'onkeypress':"return validar(event)",'id':"7",'onkeyup':"habilitar()",'onpaste':"return false"}),
-			'masa_Embolo': forms.NumberInput(attrs={'class': 'form-control', 'placeholder':"Masa Embolo",'onkeypress':"return validar(event)",'id':"8",'onkeyup':"habilitar()",'onpaste':"return false"}),
 			'usuario':forms.TextInput(attrs={'class':'form-control','id':"u2", 'placeholder':"Masa Embolo",'hidden':'True'}),
->>>>>>> b0bfd9e43ed04b249e80b94c1a8318c272078855
+
 		}
